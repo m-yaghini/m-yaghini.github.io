@@ -6,8 +6,11 @@ import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Publication from './Publication'
 import ClipboardJS from "clipboard"
-new ClipboardJS('.btn')
+import { createMuiTheme, createStyles, IconButton, makeStyles, responsiveFontSizes, Theme, ThemeProvider } from '@material-ui/core'
+import { DraftsRounded, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
+import IconButtonWithPopover from "./IconButtonWithPopover"
 
+new ClipboardJS('.btn')
 
 function Copyright() {
   return (
@@ -22,17 +25,105 @@ function Copyright() {
 }
 
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    button: {
+      "&:hover": {
+        backgroundColor: "transparent"
+      }
+    },
+    responsiveIcon: {
+      fontSize: theme.typography.h5.fontSize
+    }
+  }));
+
 export default function App() {
+  let theme = createMuiTheme({
+    typography: {
+      fontSize: 12,
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(',')
+    },
+  });
+
+  theme = responsiveFontSizes(theme);
+  const classes = useStyles(theme);
 
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ my: 2 }}>
-        <Typography variant="h3" component="h1" gutterBottom>
-          Mohammad Yaghini
-        </Typography>
-        <Typography variant="h4" component="h4" gutterBottom>
-          PhD Student in Machine Learning
-        </Typography>
+    <ThemeProvider theme={theme}>
+      <Container maxWidth="sm">
+        <Box sx={{ my: 0 }}>
+          <Grid container spacing={1} alignContent="center" direction="row" alignItems="center" justifyContent="space-evenly" >
+            <Grid item xs>
+              <Typography variant="h3" component="h1" gutterBottom>
+                Mohammad Yaghini
+            </Typography>
+              <Typography variant="h4" component="h4" gutterBottom>
+                PhD Student in Machine Learning
+            </Typography>
+            </Grid>
+            <Box sx={{ my: 2, mx: 1 }}>
+              <Grid item>
+                <Grid container
+                  alignItems="baseline"
+                  alignContent="center"
+                  direction="column"
+                  justifyContent="space-evenly">
+                  <Grid item>
+                    <IconButtonWithPopover
+                      popoverContent={
+                        <div>
+                          <Typography variant="caption" display="block" gutterBottom>
+                            Personal: first and last name with a dot in the middle at gmail
+                        </Typography>
+                          <Typography variant="caption" display="block" gutterBottom>
+                            Work: same as above at mail.utoronto.ca
+                            </Typography>
+                        </div>
+                      }
+                      popOverIcon={<DraftsRounded className={classes.responsiveIcon} />}></IconButtonWithPopover>
+                  </Grid>
+                  <Grid item>
+                    <IconButton
+                      className={classes.button}
+                      onClick={() => window.open("https://www.linkedin.com/in/myaghini", '_blank')}>
+                      <LinkedIn
+                        className={classes.responsiveIcon} />
+                    </IconButton>
+                  </Grid>
+                  <Grid item>
+                    <IconButton
+                      className={classes.button}
+                      onClick={() => window.open("https://twitter.com/myaghini", '_blank')}>
+                      <Twitter
+                        className={classes.responsiveIcon} />
+                    </IconButton>
+                  </Grid>
+                  <Grid item>
+                    <IconButton className={classes.button}
+                      onClick={() => window.open("https://github.com/m-yaghini", '_blank')}>
+                      <GitHub
+                        className={classes.responsiveIcon} />
+                    </IconButton>
+                  </Grid>
+                  <Grid item>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Box>
+          </Grid>
+        </Box>
+
         <Typography variant="h5" component="h1" gutterBottom>
           About
           </Typography>
@@ -40,7 +131,7 @@ export default function App() {
           I am a PhD student at the <Link href="https://cleverhans-lab.github.io/">
             CleverHans Lab</Link> under the supervision of <Link href="www.papernot.fr">
             Nicolas Papernot</Link> at the <Link href="https://vectorinstitute.ai/">Vector
-              Institute</Link> for Artificial Intelligence and University of Toronto.
+              Institute for Artificial Intelligence</Link> and University of Toronto.
         </Typography>
         <Typography paragraph>
           My current interests are in the intersection of machine learning and privacy.
@@ -49,7 +140,7 @@ export default function App() {
           (differentially private learning), fairness (algorithmic fairness), etc.
           More recently, I have been tackling questions of intellectual property for
           machine learning models, and generalization/domain-invariance,
-          e.g. dealing with out-of-distribution data.
+          such as dealing with out-of-distribution data.
         </Typography>
         <Typography paragraph>
           Previously, I was at the Security and Privacy Engineering lab (<Link
@@ -66,7 +157,7 @@ export default function App() {
               href="https://las.inf.ethz.ch/krausea">Andreas Krause</Link>.
               I did my undergraduate studies at Isfahan University of Technology (IUT)
               in Electrical Engineering with a specialization in Communication Systems,
-              where I was supervised for 2 years by <Link
+              where I was supervised  by <Link
             href="http://www.manshaei.org/">Mohammad Hossein Manshaei</Link> in
             the Game Theory and Mechanism Design (<Link
             href="https://gtmd.iut.ac.ir/">GTMD</Link>) group.
@@ -75,17 +166,6 @@ export default function App() {
           From September 2018 to April 2019, I interned with the Data Science team at Expedia Group (Geneva)
           where I worked on time-series prediction on large-scale datasets using Scala Spark.
         </Typography>
-        {/* <Box sx={{ my: 10 }}>
-          <Typography variant="h5" component="h1" gutterBottom>
-            Projects
-          </Typography>
-          <Grid container
-            direction="column">
-            <Grid item>
-              <SimpleCard></SimpleCard>
-            </Grid>
-          </Grid>
-        </Box> */}
         <Box sx={{ my: 2 }}>
           <Typography variant="h5" component="h1" gutterBottom>
             Pre-prints
@@ -112,7 +192,7 @@ export default function App() {
         </Box>
 
         <Copyright />
-      </Box>
-    </Container >
+      </Container >
+    </ThemeProvider>
   );
 }

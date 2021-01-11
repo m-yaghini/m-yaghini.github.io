@@ -28,19 +28,10 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         minWidth: 275,
         marginBottom: 12,
         flexGrow: 1,
-        // display: 'flex',
     },
-    // content: {
-    //     flex: '1 0 auto',
-    // },
-    // details: {
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    // },
 
     title: {
         fontSize: 16,
-        // fontWeight: 'bold'
     },
     authors: {
         fontSize: 14,
@@ -128,7 +119,6 @@ export default function Publication({ bibkey }: PublicationProps) {
                                     buttonClickedTooltip="BibTeX Copied!"
                                     buttonIcon={<FormatQuote />}
                                     dataClipboardText={bibEntry}
-                                    // onClickFunc={() => alert(bibEntry)}
                                     delayToolTipIfButtonClicked />
                             </Grid>
                         </Grid>
