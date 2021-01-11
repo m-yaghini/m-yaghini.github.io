@@ -13,7 +13,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://myaghini.com/">
+      <Link color="inherit" href="https://m-yaghini.github.io/">
         Mohammad Yaghini
       </Link>{' '}
       {new Date().getFullYear()}
@@ -45,7 +45,7 @@ export default function App() {
         <Typography paragraph>
           My current interests are in the intersection of machine learning and privacy.
           More broadly,  I am  interested in trustworthy machine learning,
-          whether that trustworthy-ness is defined with respect to privacy
+          whether that trustworthiness is defined with respect to privacy
           (differentially private learning), fairness (algorithmic fairness), etc.
           More recently, I have been tackling questions of intellectual property for
           machine learning models, and generalization/domain-invariance,
