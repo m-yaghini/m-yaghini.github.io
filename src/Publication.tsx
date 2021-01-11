@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
-import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import { parseBibFile, normalizeFieldValue } from 'bibtex'
@@ -12,10 +11,6 @@ import { Grid } from '@material-ui/core'
 import { FormatQuote, SubjectTwoTone } from '@material-ui/icons';
 import MyButton from './MyButton'
 
-
-function sp() {
-    return <span>{" "}</span>
-}
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -31,13 +26,13 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
 
     title: {
-        fontSize: 16,
+        fontSize: theme.typography.subtitle1.fontSize,
     },
     authors: {
-        fontSize: 14,
+        fontSize: theme.typography.subtitle2.fontSize,
     },
     subtitle: {
-        fontSize: 13,
+        fontSize: theme.typography.caption.fontSize,
     }
 }));
 
@@ -52,8 +47,8 @@ function getFirstGroup(regexp: RegExp, str: String) {
 }
 
 export default function Publication({ bibkey }: PublicationProps) {
-    const classes = useStyles()
     const theme = useTheme()
+    const classes = useStyles(theme)
 
     const bibFile_ = parseBibFile(bibFile)
 
@@ -72,8 +67,8 @@ export default function Publication({ bibkey }: PublicationProps) {
 
     let title: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("title")) ?? '')
     let journal: string = String(((normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("booktitle")))
-        || (normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("journal"))
-            + "-" + normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("year")))) ?? '')
+        || (normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("volume"))
+            + " (" + normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("year")))) ?? '') + ")"
 
     let url: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("url")) ?? '')
 
