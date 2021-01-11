@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
 import { Box, Fade, IconButton } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>

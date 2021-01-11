@@ -77,24 +77,23 @@ export default function Publication({ bibkey }: PublicationProps) {
 
     let url: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("url")) ?? '')
 
-    let bibTexEntry = bibFile_.getEntry(bibkey)
     return (
         <Card className={classes.root}>
             <Grid container spacing={1} alignContent="space-between" direction="row" alignItems="baseline" >
                 <Grid item xs>
                     <CardContent>
                         <Typography gutterBottom>
-                            <Box className={classes.title}>
+                            <Box className={classes.title} component="span">
                                 {title}
                             </Box>
                         </Typography>
                         <Typography color="textSecondary" gutterBottom>
-                            <Box className={classes.authors} >
+                            <Box className={classes.authors} component="span">
                                 {authors}
                             </Box>
                         </Typography>
                         <Typography className={classes.subtitle} color="textSecondary">
-                            <Box className={classes.subtitle} >
+                            <Box className={classes.subtitle} component="span">
                                 {journal}
                             </Box>
                         </Typography>
