@@ -1,5 +1,5 @@
 import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles"
-import { Button, Typography } from "@material-ui/core"
+import { Button, Typography, useThemeProps } from "@material-ui/core"
 import React from "react"
 
 
@@ -9,11 +9,11 @@ interface SimpleButtonProps {
     onClick: Function
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
         "&.MuiButtonBase-root": {
-            // padding: "4px",
-            minWidth: "30%",
+            // paddingTop: "10px",
+            minWidth: "0%",
             "&:hover": {
                 backgroundColor: "transparent"
             }
@@ -21,13 +21,18 @@ const useStyles = makeStyles({
 
     },
     label: {
-        padding: 0,
-        minWidth: 0,
+        "&.MuiTypography-root": {
+            fontSize: theme.typography.h5.fontSize,
+            fontWeight: theme.typography.fontWeightBold,
+            padding: 0,
+            minWidth: 0,
+        }
     }
-});
+}));
 
 export default function ({ className, text, onClick }: SimpleButtonProps) {
-    const classes = useStyles()
+    const theme = useTheme()
+    const classes = useStyles(theme)
     return (
         <Button
             className={className}
@@ -35,7 +40,7 @@ export default function ({ className, text, onClick }: SimpleButtonProps) {
             classes={{ root: classes.root }}
             color="inherit"
             centerRipple>
-            <Typography variant="h6">
+            <Typography variant="button" display="block" className={classes.label}>
                 {text}
             </Typography>
         </Button>
