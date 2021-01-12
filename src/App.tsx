@@ -6,12 +6,9 @@ import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Publication from './Publication'
 import ClipboardJS from "clipboard"
-import { createStyles, makeStyles, Theme, useTheme, Avatar, Button, IconButton, ThemeProvider } from '@material-ui/core'
-import { DraftsRounded, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
-import IconButtonWithPopover from "./IconButtonWithPopover"
-import SimpleButton from "./SimpleButton"
+import { createStyles, makeStyles, Theme, useTheme, Avatar, Button, IconButton, ThemeProvider, Hidden } from '@material-ui/core'
 import photo from "./assets/photo.jpg"
-import pdf from "./assets/cv.pdf"
+import ContactSheet from "./ContactSheet"
 
 new ClipboardJS('.btn')
 
@@ -30,23 +27,26 @@ function Copyright() {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    photo: {
+    root: {
+      flexGrow: 1
+    },
+    avatar: {
       "&.MuiAvatar-root": {
-        height: theme.spacing(16),
-        width: theme.spacing(16)
-      }
+        height: "auto",
+        width: theme.spacing(20),
+        // paddingTop: "10px"
+      },
     },
     button: {
       "&.MuiButtonBase-root": {
-        paddingTop: "0.3vh",
-        paddingBottom: "0.3vh"
+        // padding: "4px"
       },
       "&:hover": {
         backgroundColor: "transparent"
       }
     },
     responsiveIcon: {
-      // fontSize: theme.typography.h3.fontSize
+      fontSize: theme.typography.h4.fontSize
     },
     large: {
       width: theme.spacing(12),
@@ -60,78 +60,41 @@ export default function App() {
 
   return (
     <div>
-      <Container maxWidth="sm">
-        <Box sx={{ my: 0 }}>
-          <Grid container
-            spacing={1}
-            alignContent="center"
-            direction="row"
-            alignItems="center"
-            justifyContent="space-evenly" >
-            <Grid item xs>
-              <Typography variant="h3" component="h1" gutterBottom>
-                Mohammad Yaghini
-            </Typography>
-              <Typography variant="h5" component="h5" gutterBottom>
-                PhD Student in Machine Learning
-            </Typography>
-            </Grid>
-            <Grid item>
-              <Avatar classes={{ root: classes.photo }} alt="MYaghini" variant="rounded" src={photo}></Avatar>
-            </Grid>
-            <Box sx={{ my: 2, mx: 1 }}>
+      <Container maxWidth="md">
+        <Box sx={{ my: 1, flexGrow: 1 }}>
+          <Grid container direction="column">
+            <Grid item container
+              spacing={2}
+              // alignContent="flex-start"
+              direction="row"
+              alignItems="center"
+              justifyContent="center">
               <Grid item>
-                <Grid container
-                  alignItems="center"
-                  alignContent="flex-end"
-                  direction="column"
-                  justifyContent="center"
-                >
-                  <Grid item>
-                    <IconButtonWithPopover
-                      popoverContent={
-                        <div>
-                          <Typography variant="caption" display="block" gutterBottom>
-                            Personal: first and last name with a dot in the middle at gmail
-                        </Typography>
-                          <Typography variant="caption" display="block" gutterBottom>
-                            Work: same as above at mail.utoronto.ca
-                            </Typography>
-                        </div>
-                      }
-                      popOverIcon={<DraftsRounded className={classes.responsiveIcon} />}></IconButtonWithPopover>
-                  </Grid>
-                  <Grid item>
-                    <IconButton
-                      className={classes.button}
-                      onClick={() => window.open("https://www.linkedin.com/in/myaghini", '_blank')}>
-                      <LinkedIn
-                        className={classes.responsiveIcon} />
-                    </IconButton>
-                  </Grid>
-                  <Grid item>
-                    <IconButton
-                      className={classes.button}
-                      onClick={() => window.open("https://twitter.com/myaghini", '_blank')}>
-                      <Twitter
-                        className={classes.responsiveIcon} />
-                    </IconButton>
-                  </Grid>
-                  <Grid item>
-                    <IconButton className={classes.button}
-                      onClick={() => window.open("https://github.com/m-yaghini", '_blank')}>
-                      <GitHub
-                        className={classes.responsiveIcon} />
-                    </IconButton>
-                  </Grid>
-                  <Grid item>
-                    <SimpleButton text="CV" onClick={() => window.open(pdf, '_blank')}></SimpleButton>
-                  </Grid>
-                </Grid>
+                <Avatar classes={{ root: classes.avatar }} alt="MYaghini" variant="rounded" src={photo}></Avatar>
               </Grid>
-            </Box>
+              <Grid item container direction="column" xs>
+                <Typography component="h2" variant="h3" gutterBottom>
+                  Mohammad Yaghini
+            </Typography>
+                <Typography component="h5" variant="h5" gutterBottom>
+                  PhD Student in Machine Learning
+            </Typography>
+                <ContactSheet direction="row" classes={classes} justifyContent="flex-start" />
+              </Grid>
+              {/* <Hidden smDown>
+              <Grid item>
+                <ContactSheet direction="column" classes={classes} />
+              </Grid>
+            </Hidden> */}
+            </Grid>
+            {/* <Grid item>
+              <ContactSheet direction="row" classes={classes} />
+            </Grid> */}
           </Grid>
         </Box>
+        {/* <Hidden smUp>
+          <ContactSheet direction="row" classes={classes} />
+        </Hidden> */}
 
         <Typography variant="h5" component="h1" gutterBottom>
           About
@@ -202,6 +165,6 @@ export default function App() {
 
         <Copyright />
       </Container >
-    </div>
+    </div >
   );
 }

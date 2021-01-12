@@ -4,6 +4,7 @@ import React from "react"
 
 
 interface SimpleButtonProps {
+    className: string,
     text: String,
     onClick: Function
 }
@@ -11,10 +12,8 @@ interface SimpleButtonProps {
 const useStyles = makeStyles({
     root: {
         "&.MuiButtonBase-root": {
-            padding: 0,
-            paddingTop: "0.3vh",
-            paddingBottom: "0.3vh",
-            minWidth: "50%",
+            // padding: "4px",
+            minWidth: "30%",
             "&:hover": {
                 backgroundColor: "transparent"
             }
@@ -27,10 +26,11 @@ const useStyles = makeStyles({
     }
 });
 
-export default function ({ text, onClick }: SimpleButtonProps) {
+export default function ({ className, text, onClick }: SimpleButtonProps) {
     const classes = useStyles()
     return (
         <Button
+            className={className}
             onClick={() => onClick()}
             classes={{ root: classes.root }}
             color="inherit"

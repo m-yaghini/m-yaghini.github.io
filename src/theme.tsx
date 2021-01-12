@@ -19,6 +19,15 @@ let theme = createMuiTheme({
       '"Segoe UI Symbol"',
     ].join(',')
   },
+  // breakpoints: {
+  //   values: {
+  //     xs: 0,
+  //     sm: 566,
+  //     md: 960,
+  //     lg: 1280,
+  //     xl: 1920
+  //   }
+  // },
   palette: {
     action: {
       hover: "transparent"
