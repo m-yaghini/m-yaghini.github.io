@@ -6,9 +6,12 @@ import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Publication from './Publication'
 import ClipboardJS from "clipboard"
-import { createStyles, IconButton, makeStyles, Theme, useTheme } from '@material-ui/core'
+import { createStyles, makeStyles, Theme, useTheme, Avatar, Button, IconButton, ThemeProvider } from '@material-ui/core'
 import { DraftsRounded, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
 import IconButtonWithPopover from "./IconButtonWithPopover"
+import SimpleButton from "./SimpleButton"
+import photo from "./assets/photo.jpg"
+import pdf from "./assets/cv.pdf"
 
 new ClipboardJS('.btn')
 
@@ -27,40 +30,63 @@ function Copyright() {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    photo: {
+      "&.MuiAvatar-root": {
+        height: theme.spacing(16),
+        width: theme.spacing(16)
+      }
+    },
     button: {
+      "&.MuiButtonBase-root": {
+        paddingTop: "0.3vh",
+        paddingBottom: "0.3vh"
+      },
       "&:hover": {
         backgroundColor: "transparent"
       }
     },
     responsiveIcon: {
       // fontSize: theme.typography.h3.fontSize
+    },
+    large: {
+      width: theme.spacing(12),
+      // height: theme.spacing(7),
     }
   }));
 
 export default function App() {
   const theme = useTheme()
-  const classes = useStyles(theme);
+  const classes = useStyles()
 
   return (
     <div>
       <Container maxWidth="sm">
         <Box sx={{ my: 0 }}>
-          <Grid container spacing={1} alignContent="center" direction="row" alignItems="center" justifyContent="space-evenly" >
+          <Grid container
+            spacing={1}
+            alignContent="center"
+            direction="row"
+            alignItems="center"
+            justifyContent="space-evenly" >
             <Grid item xs>
               <Typography variant="h3" component="h1" gutterBottom>
                 Mohammad Yaghini
             </Typography>
-              <Typography variant="h4" component="h4" gutterBottom>
+              <Typography variant="h5" component="h5" gutterBottom>
                 PhD Student in Machine Learning
             </Typography>
+            </Grid>
+            <Grid item>
+              <Avatar classes={{ root: classes.photo }} alt="MYaghini" variant="rounded" src={photo}></Avatar>
             </Grid>
             <Box sx={{ my: 2, mx: 1 }}>
               <Grid item>
                 <Grid container
-                  alignItems="baseline"
+                  alignItems="center"
                   alignContent="flex-end"
                   direction="column"
-                  justifyContent="flex-end">
+                  justifyContent="center"
+                >
                   <Grid item>
                     <IconButtonWithPopover
                       popoverContent={
@@ -99,6 +125,7 @@ export default function App() {
                     </IconButton>
                   </Grid>
                   <Grid item>
+                    <SimpleButton text="CV" onClick={() => window.open(pdf, '_blank')}></SimpleButton>
                   </Grid>
                 </Grid>
               </Grid>

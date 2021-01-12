@@ -20,6 +20,9 @@ let theme = createMuiTheme({
     ].join(',')
   },
   palette: {
+    action: {
+      hover: "transparent"
+    },
     primary: {
       main: '#556cd6',
     },
