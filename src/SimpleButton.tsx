@@ -12,8 +12,9 @@ interface SimpleButtonProps {
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
         "&.MuiButtonBase-root": {
-            // paddingTop: "10px",
-            minWidth: "0%",
+            padding: "3px 0 0 2px",
+            minWidth: 0,
+            minHeight: 0,
             "&:hover": {
                 backgroundColor: "transparent"
             }

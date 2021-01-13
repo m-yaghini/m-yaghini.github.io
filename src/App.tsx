@@ -6,9 +6,11 @@ import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Publication from './Publication'
 import ClipboardJS from "clipboard"
-import { createStyles, makeStyles, Theme, useTheme, Avatar, Button, IconButton, ThemeProvider, Hidden } from '@material-ui/core'
-import photo from "./assets/photo.jpg"
-import ContactSheet from "./ContactSheet"
+import { createStyles, makeStyles, Theme, useTheme, Avatar } from '@material-ui/core'
+
+import CustomizedTimeline from "./CustomizedTimeline"
+import About from "./About"
+import Masthead from "./Masthead"
 
 new ClipboardJS('.btn')
 
@@ -37,17 +39,6 @@ const useStyles = makeStyles((theme: Theme) =>
         // paddingTop: "10px"
       },
     },
-    button: {
-      "&.MuiButtonBase-root": {
-        // padding: "4px"
-      },
-      "&:hover": {
-        backgroundColor: "transparent"
-      }
-    },
-    responsiveIcon: {
-      fontSize: theme.typography.h4.fontSize
-    },
     large: {
       width: theme.spacing(12),
       // height: theme.spacing(7),
@@ -59,87 +50,22 @@ export default function App() {
   const classes = useStyles()
 
   return (
-    <div>
-      <Container maxWidth="md">
-        <Box sx={{ my: 1, flexGrow: 1 }}>
-          <Grid container direction="column">
-            <Grid item container
-              spacing={2}
-              // alignContent="flex-start"
-              direction="row"
-              alignItems="center"
-              justifyContent="center">
-              <Grid item>
-                <Avatar classes={{ root: classes.avatar }} alt="MYaghini" variant="rounded" src={photo}></Avatar>
-              </Grid>
-              <Grid item container direction="column" xs>
-                <Typography component="h2" variant="h3" gutterBottom>
-                  Mohammad Yaghini
-            </Typography>
-                <Typography component="h5" variant="h5" gutterBottom>
-                  PhD Student in Machine Learning
-            </Typography>
-                <ContactSheet direction="row" classes={classes} justifyContent="flex-start" />
-              </Grid>
-              {/* <Hidden smDown>
-              <Grid item>
-                <ContactSheet direction="column" classes={classes} />
-              </Grid>
-            </Hidden> */}
-            </Grid>
-            {/* <Grid item>
-              <ContactSheet direction="row" classes={classes} />
-            </Grid> */}
-          </Grid>
-        </Box>
-        {/* <Hidden smUp>
-          <ContactSheet direction="row" classes={classes} />
-        </Hidden> */}
-
-        <Typography variant="h5" component="h1" gutterBottom>
-          About
+    <Container maxWidth="md">
+      <Masthead />
+      <Grid container direction="row" spacing={1}>
+        <Grid item>
+        </Grid>
+        <Grid item>
+          <About />
+        </Grid>
+        <Grid item>
+          <Typography variant="h4" component="h1" gutterBottom>
+            News
           </Typography>
-        <Typography paragraph>
-          I am a PhD student at the <Link href="https://cleverhans-lab.github.io/">
-            CleverHans Lab</Link> under the supervision of <Link href="www.papernot.fr">
-            Nicolas Papernot</Link> at the <Link href="https://vectorinstitute.ai/">Vector
-              Institute for Artificial Intelligence</Link> and University of Toronto.
-        </Typography>
-        <Typography paragraph>
-          My current interests are in the intersection of machine learning and privacy.
-          More broadly,  I am  interested in trustworthy machine learning,
-          whether that trustworthiness is defined with respect to privacy
-          (differentially private learning), fairness (algorithmic fairness), etc.
-          More recently, I have been tackling questions of intellectual property for
-          machine learning models, and generalization/domain-invariance,
-          such as dealing with out-of-distribution data.
-        </Typography>
-        <Typography paragraph>
-          Previously, I was at the Security and Privacy Engineering lab (<Link
-            href="https://www.epfl.ch/labs/spring/">
-            SPRING</Link>) at École Polytechnique Fédérale de Lausanne (EPFL),
-            where I obtained my masters in Data Science and was supervised by <Link
-            href="http://carmelatroncoso.com/">Carmela Troncoso</Link> and <Link
-              href="https://lia.epfl.ch/~faltings/">Boi Faltings</Link> (<Link
-                href="https://lia.epfl.ch/">LIA</Link>). I completed my master thesis at
-          Learning and Adaptive Systems (<Link
-            href="https://las.inf.ethz.ch/">LAS</Link>) lab at ETH Zurich,
-          under the supervision of <Link
-            href="http://www.cs.cmu.edu/~hheidari/">Hoda Heidari</Link> and <Link
-              href="https://las.inf.ethz.ch/krausea">Andreas Krause</Link>.
-              I did my undergraduate studies at Isfahan University of Technology (IUT)
-              in Electrical Engineering with a specialization in Communication Systems,
-              where I was supervised  by <Link
-            href="http://www.manshaei.org/">Mohammad Hossein Manshaei</Link> in
-            the Game Theory and Mechanism Design (<Link
-            href="https://gtmd.iut.ac.ir/">GTMD</Link>) group.
-        </Typography>
-        <Typography paragraph>
-          From September 2018 to April 2019, I interned with the Data Science team at Expedia Group (Geneva)
-          where I worked on time-series prediction on large-scale datasets using Scala Spark.
-        </Typography>
-        <Box sx={{ my: 2 }}>
-          <Typography variant="h5" component="h1" gutterBottom>
+          <CustomizedTimeline />
+        </Grid>
+        <Grid item>
+          <Typography variant="h4" component="h1" gutterBottom>
             Pre-prints
           </Typography>
           <Grid container
@@ -149,9 +75,9 @@ export default function App() {
               <Publication bibkey={"human"} />
             </Grid>
           </Grid>
-        </Box>
-        <Box sx={{ my: 2 }}>
-          <Typography variant="h5" component="h1" gutterBottom>
+        </Grid>
+        <Grid item>
+          <Typography variant="h4" component="h1" gutterBottom>
             Publications
           </Typography>
           <Grid container
@@ -161,10 +87,10 @@ export default function App() {
               <Publication bibkey={"energy-aware"} />
             </Grid>
           </Grid>
-        </Box>
+        </Grid>
+      </Grid>
+      <Copyright />
+    </Container >
 
-        <Copyright />
-      </Container >
-    </div >
   );
 }

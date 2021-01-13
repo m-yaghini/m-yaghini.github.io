@@ -7,7 +7,7 @@ import pdf from "./assets/cv.pdf"
 
 interface ContactSheetProps {
     direction: GridDirection,
-    classes: Record<"root" | "button" | "large" | "avatar" | "responsiveIcon", string>,
+    classes: Record<"button" | "avatar" | "responsiveIcon", string>,
     justifyContent?: GridJustification
 }
 
