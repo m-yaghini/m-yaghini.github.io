@@ -10,6 +10,7 @@ import { createStyles, makeStyles, Theme, useTheme, Avatar } from '@material-ui/
 import News from "./News"
 import About from "./About"
 import Masthead from "./Masthead"
+import Previously from "./Previously"
 
 new ClipboardJS('.btn')
 
@@ -51,17 +52,20 @@ export default function App() {
   return (
     <Container maxWidth="md">
       <Masthead />
-      <Grid container direction="row" spacing={1}>
-        <Grid item container direction="row" spacing={3}>
-          <Grid item xs={12} sm={8}>
+      <Grid container direction="row" spacing={2}>
+        <Grid item container direction="row" spacing={2}>
+          <Grid item xs={12} sm={7}>
             <About />
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={5}>
             <Typography variant="h4" component="h1" gutterBottom>
               News
             </Typography>
             <News />
           </Grid>
+        </Grid>
+        <Grid item>
+          <Previously />
         </Grid>
         <Grid item>
           <Typography variant="h4" component="h1" gutterBottom>

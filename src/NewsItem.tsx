@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: theme.typography.subtitle2.fontSize,
     },
     cardPaper: {
-        padding: '6px 16px',
+        padding: '6px 10px',
     },
 }));
 
