@@ -5,7 +5,7 @@ import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Publication from './Publication'
 import ClipboardJS from "clipboard"
-import { createStyles, makeStyles, Theme, useTheme, Avatar } from '@material-ui/core'
+import { createStyles, makeStyles, Theme, useTheme, Avatar, Hidden } from '@material-ui/core'
 
 import News from "./News"
 import About from "./About"
@@ -57,15 +57,22 @@ export default function App() {
           <Grid item xs={12} sm={7}>
             <About />
           </Grid>
+          <Hidden smUp>
+            <Grid item sm={12}>
+              <Previously />
+            </Grid>
+          </Hidden>
           <Grid item xs={12} sm={5}>
             <Typography variant="h4" component="h1" gutterBottom>
               News
             </Typography>
             <News />
           </Grid>
-        </Grid>
-        <Grid item>
-          <Previously />
+          <Hidden smDown>
+            <Grid item sm={12}>
+              <Previously />
+            </Grid>
+          </Hidden>
         </Grid>
         <Grid item>
           <Typography variant="h4" component="h1" gutterBottom>
