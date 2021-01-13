@@ -1,14 +1,13 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
-import Box from '@material-ui/core/Box'
 import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Publication from './Publication'
 import ClipboardJS from "clipboard"
 import { createStyles, makeStyles, Theme, useTheme, Avatar } from '@material-ui/core'
 
-import CustomizedTimeline from "./CustomizedTimeline"
+import News from "./News"
 import About from "./About"
 import Masthead from "./Masthead"
 
@@ -53,16 +52,16 @@ export default function App() {
     <Container maxWidth="md">
       <Masthead />
       <Grid container direction="row" spacing={1}>
-        <Grid item>
-        </Grid>
-        <Grid item>
-          <About />
-        </Grid>
-        <Grid item>
-          <Typography variant="h4" component="h1" gutterBottom>
-            News
-          </Typography>
-          <CustomizedTimeline />
+        <Grid item container direction="row" spacing={3}>
+          <Grid item xs={12} sm={8}>
+            <About />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Typography variant="h4" component="h1" gutterBottom>
+              News
+            </Typography>
+            <News />
+          </Grid>
         </Grid>
         <Grid item>
           <Typography variant="h4" component="h1" gutterBottom>
