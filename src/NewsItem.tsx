@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 interface NewsItemProps {
     title: string,
     date: string,
-    content: string,
+    content: string | JSX.Element,
     icon?: "news" | "paper" | "talk",
     firstPost?: boolean
 }
@@ -72,7 +72,7 @@ export default function ({ title, date, content, icon, firstPost }: NewsItemProp
     const initDot = firstPost !== undefined ? (
         <TimelineItem className={classes.dot}>
             <TimelineOppositeContent className={classes.dot}>
-                <Typography variant="body2" style={{ visibility: "hidden" }}>
+                <Typography variant="body2" style={{ visibility: "hidden" }} component="span">
                     {date}
                 </Typography>
             </TimelineOppositeContent>
@@ -88,7 +88,7 @@ export default function ({ title, date, content, icon, firstPost }: NewsItemProp
         <div>
             <TimelineItem>
                 <TimelineOppositeContent className={classes.oppositeContent} >
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body2" color="textSecondary" component="span">
                         {date}
                     </Typography>
                 </TimelineOppositeContent>
@@ -103,7 +103,7 @@ export default function ({ title, date, content, icon, firstPost }: NewsItemProp
                                 {title}
                             </Box>
                         </Typography>
-                        <Typography>
+                        <Typography component="span">
                             <Box className={classes.newsContent}>
                                 {content}
                             </Box>
