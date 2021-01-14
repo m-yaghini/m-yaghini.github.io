@@ -36,12 +36,10 @@ const useStyles = makeStyles((theme: Theme) =>
       "&.MuiAvatar-root": {
         height: "auto",
         width: theme.spacing(20),
-        // paddingTop: "10px"
       },
     },
     large: {
       width: theme.spacing(12),
-      // height: theme.spacing(7),
     }
   }));
 
@@ -51,8 +49,8 @@ export default function App() {
 
   return (
     <Container maxWidth="md">
-      <Masthead />
-      <Grid container direction="column" spacing={2}>   {/*  Try to put it in a single column */}
+      <Masthead /> {/* Works better outside of the main container on Safari*/}
+      <Grid container direction="column" spacing={1} justifyContent="flex-start">   {/*  Try to put it in a single column */}
         <Grid item container direction="row" spacing={2}>  {/*  Try to put it in a single row */}
           {/* when in "extra small" mode, this should take the whole row; 
           when in "small" mode only 7/12 of the row */}

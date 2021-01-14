@@ -33,7 +33,7 @@ export default function () {
     const classes = useStyles()
 
     return (
-        <Box sx={{ my: 1, flexGrow: 1 }}>
+        <Box sx={{ my: 2, flexGrow: 1 }}>
             <Grid item container
                 spacing={2}
                 // alignContent="flex-start"
