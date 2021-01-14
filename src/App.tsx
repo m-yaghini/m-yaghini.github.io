@@ -52,8 +52,10 @@ export default function App() {
   return (
     <Container maxWidth="md">
       <Masthead />
-      <Grid container direction="row" spacing={2}>
-        <Grid item container direction="row" spacing={2}>
+      <Grid container direction="column" spacing={2}>   {/*  Try to put it in a single column */}
+        <Grid item container direction="row" spacing={2}>  {/*  Try to put it in a single row */}
+          {/* when in "extra small" mode, this should take the whole row; 
+          when in "small" mode only 7/12 of the row */}
           <Grid item xs={12} sm={7}>
             <About />
           </Grid>
@@ -78,25 +80,15 @@ export default function App() {
           <Typography variant="h4" component="h1" gutterBottom>
             Pre-prints
           </Typography>
-          <Grid container
-            direction="column">
-            <Grid item>
-              <Publication bibkey={"disp-vuln"} />
-              <Publication bibkey={"human"} />
-            </Grid>
-          </Grid>
+          <Publication bibkey={"disp-vuln"} />
+          <Publication bibkey={"human"} />
         </Grid>
         <Grid item>
           <Typography variant="h4" component="h1" gutterBottom>
             Publications
           </Typography>
-          <Grid container
-            direction="column">
-            <Grid item>
-              <Publication bibkey={"non-discr"} />
-              <Publication bibkey={"energy-aware"} />
-            </Grid>
-          </Grid>
+          <Publication bibkey={"non-discr"} />
+          <Publication bibkey={"energy-aware"} />
         </Grid>
       </Grid>
       <Copyright />
