@@ -22,9 +22,9 @@ export default function News() {
                 icon="paper"
             />
             <NewsItem
-                date="Jan. 2021"
-                title="We are online!"
-                content=""
+                date="Sep. 2020"
+                title="A new start"
+                content="I have started my PhD at CleverHans lab."
                 icon="news"
                 firstPost
             />
