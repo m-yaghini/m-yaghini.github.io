@@ -68,12 +68,12 @@ export default function Publication({ bibkey }: PublicationProps) {
     let title: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("title")) ?? '')
     let journal: string = String(((normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("booktitle")))
         || (normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("volume"))
-            + " (" + normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("year")))) ?? '') + ")"
+            + " (" + normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("year"))) + ")") ?? '')
 
     let url: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("url")) ?? '')
 
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root} id={bibkey}>
             <Grid container spacing={1} alignContent="space-between" direction="row" alignItems="baseline" >
                 <Grid item xs>
                     <CardContent>

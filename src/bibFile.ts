@@ -1,4 +1,14 @@
-const bibFile = `@article{disp-vuln,
+const bibFile = `
+@inproceedings{
+  dataset-inference,
+  title={Dataset Inference: Ownership Resolution in Machine Learning},
+  author={Pratyush Maini and Mohammad Yaghini and Nicolas Papernot},
+  booktitle={Proceedings of the 2021 International Conference on Learning Representations (ICLR 2021)},
+  year={2021},
+  url={https://openreview.net/forum?id=hvdKKV2yt7T}
+  }
+
+@article{disp-vuln,
     author    = {Mohammad Yaghini and Bogdan Kulynych and Giovanni Cherubin and Carmela Troncoso},
     title     = {Disparate Vulnerability: on the Unfairness of Privacy Attacks Against
                  Machine Learning},

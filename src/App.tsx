@@ -3,16 +3,17 @@ import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
-import Publication from './Publication'
 import ClipboardJS from "clipboard"
-import { createStyles, makeStyles, Theme, useTheme, Avatar, Hidden } from '@material-ui/core'
+import { createStyles, makeStyles, Theme, useTheme, Hidden } from '@material-ui/core'
 
+import Publication from './Publication'
 import News from "./News"
 import About from "./About"
 import Masthead from "./Masthead"
 import Previously from "./Previously"
 
-new ClipboardJS('.btn')
+// Library loading
+new ClipboardJS('.btn') // start ClipboardJS
 
 function Copyright() {
   return (
@@ -76,17 +77,18 @@ export default function App() {
         </Grid>
         <Grid item>
           <Typography variant="h4" component="h1" gutterBottom>
+            Publications
+          </Typography>
+          <Publication bibkey={"dataset-inference"} />
+          <Publication bibkey={"non-discr"} />
+          <Publication bibkey={"energy-aware"} />
+        </Grid>
+        <Grid item>
+          <Typography variant="h4" component="h1" gutterBottom>
             Pre-prints
           </Typography>
           <Publication bibkey={"disp-vuln"} />
           <Publication bibkey={"human"} />
-        </Grid>
-        <Grid item>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Publications
-          </Typography>
-          <Publication bibkey={"non-discr"} />
-          <Publication bibkey={"energy-aware"} />
         </Grid>
       </Grid>
       <Copyright />
