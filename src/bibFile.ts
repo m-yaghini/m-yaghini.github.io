@@ -1,6 +1,6 @@
+// NOTE: the key should be on the same line as the identifier (@).
 const bibFile = `
-@inproceedings{
-  dataset-inference,
+@inproceedings{dataset-inference,
   title={Dataset Inference: Ownership Resolution in Machine Learning},
   author={Pratyush Maini and Mohammad Yaghini and Nicolas Papernot},
   booktitle={Proceedings of the 2021 International Conference on Learning Representations (ICLR 2021)},
