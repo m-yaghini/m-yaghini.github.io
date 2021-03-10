@@ -1,6 +1,5 @@
 import React from "react"
 import Typography from '@material-ui/core/Typography'
-import Link from '@material-ui/core/Link'
 import { Avatar, Box, createStyles, Grid, makeStyles, Theme, useTheme } from "@material-ui/core"
 import photo from "./assets/photo.jpg"
 import ContactSheet from "./ContactSheet"
@@ -28,9 +27,9 @@ const useStyles = makeStyles((theme: Theme) =>
     }));
 
 
-export default function () {
+export default function Masthead() {
     const theme = useTheme()
-    const classes = useStyles()
+    const classes = useStyles(theme)
 
     return (
         <Box sx={{ my: 2, flexGrow: 1 }}>

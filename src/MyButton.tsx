@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, createStyles, Fade, makeStyles, Theme, Tooltip } from '@material-ui/core'
 
 interface MyButtonProps {
@@ -24,7 +24,7 @@ function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export default function ({ buttonText, buttonTooltip, buttonIcon, buttonClickedTooltip, onClickFunc, delayToolTipIfButtonClicked, dataClipboardText }: MyButtonProps) {
+export default function MyBotton({ buttonText, buttonTooltip, buttonIcon, buttonClickedTooltip, onClickFunc, delayToolTipIfButtonClicked, dataClipboardText }: MyButtonProps) {
     const classes = useStyles()
     const [buttonClicked, setButtonClicked] = useState(false);
     const _buttonClickedTooltip = buttonClickedTooltip === undefined ? buttonTooltip : buttonClickedTooltip

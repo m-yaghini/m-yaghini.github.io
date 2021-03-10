@@ -1,7 +1,7 @@
 import React from "react"
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
-import { Box, makeStyles, Paper, SvgIcon, Typography } from "@material-ui/core";
+import { Box, makeStyles, Paper, Typography } from "@material-ui/core";
 import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import TimelineConnector from "@material-ui/lab/TimelineConnector";
@@ -42,7 +42,7 @@ interface NewsItemProps {
     firstPost?: boolean
 }
 
-export default function ({ title, date, content, icon, firstPost }: NewsItemProps) {
+export default function NewsItem({ title, date, content, icon, firstPost }: NewsItemProps) {
     const classes = useStyles();
     const dispIcon = (
         icon === "news" ?

@@ -37,7 +37,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 }));
 
 interface PublicationProps {
-    bibkey: string
+    bibkey: string,
+    jointWithAndRole?: [[string], string]
 }
 
 // from https://stackoverflow.com/a/432503
@@ -46,7 +47,7 @@ function getFirstGroup(regexp: RegExp, str: String) {
     return array.map(m => m[1]);
 }
 
-export default function Publication({ bibkey }: PublicationProps) {
+export default function Publication({ bibkey, jointWithAndRole }: PublicationProps) {
     const theme = useTheme()
     const classes = useStyles(theme)
 
@@ -63,13 +64,22 @@ export default function Publication({ bibkey }: PublicationProps) {
     const bibEntry = bibTexEntries[bibkey]
 
     let authors: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("author")))
-    authors = authors.replace(" and", ",")
+    authors = authors.replace(/\s{1}and\s{1}(?=.*and)/mg, ', ')
+
+    let attribution
+    if (jointWithAndRole !== undefined) {
+        authors = authors.replace("Yaghini", "Yaghini*")
+        jointWithAndRole[0].forEach(x => {
+            authors = authors.replace(x, x + "*")
+        })
+        attribution = jointWithAndRole[1]
+    }
 
     let title: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("title")) ?? '')
     let journal: string = String(((normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("booktitle")))
         || (normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("volume"))
             + " (" + normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("year"))) + ")") ?? '')
-
+    let secondline = jointWithAndRole === undefined ? journal : "* " + attribution + ". " + journal
     let url: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("url")) ?? '')
 
     return (
@@ -89,9 +99,11 @@ export default function Publication({ bibkey }: PublicationProps) {
                         </Typography>
                         <Typography className={classes.subtitle} color="textSecondary">
                             <Box className={classes.subtitle} component="span">
-                                {journal}
+                                {secondline}
                             </Box>
                         </Typography>
+
+
                     </CardContent>
                 </Grid>
                 <Grid item>

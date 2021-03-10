@@ -1,5 +1,14 @@
 // NOTE: the key should be on the same line as the identifier (@).
 const bibFile = `
+@article{pol,
+  title={Proof-of-Learning: Definitions and Practice}, 
+  author={Hengrui Jia and Mohammad Yaghini and Christopher A. Choquette-Choo and Natalie Dullerud and Anvith Thudi and Varun Chandrasekaran and Nicolas Papernot},
+  booktitle={To appear in the 42nd IEEE Symposium on Security and Privacy},
+  year={2021},
+  eprint={2103.05633},
+  url={https://arxiv.org/abs/2103.05633},
+}
+
 @inproceedings{dataset-inference,
   title={Dataset Inference: Ownership Resolution in Machine Learning},
   author={Pratyush Maini and Mohammad Yaghini and Nicolas Papernot},

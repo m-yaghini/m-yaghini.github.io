@@ -11,7 +11,7 @@ interface ContactSheetProps {
     justifyContent?: GridJustification
 }
 
-export default function ({ direction, classes, justifyContent }: ContactSheetProps) {
+export default function ContactSheet({ direction, classes, justifyContent }: ContactSheetProps) {
     return (
         <Grid container
             alignItems="center"

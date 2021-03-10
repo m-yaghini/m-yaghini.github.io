@@ -1,6 +1,6 @@
-import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles"
-import { Button, Typography, useThemeProps } from "@material-ui/core"
 import React from "react"
+import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles"
+import { Button, Typography } from "@material-ui/core"
 
 
 interface SimpleButtonProps {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-export default function ({ className, text, onClick }: SimpleButtonProps) {
+export default function SimpleButton({ className, text, onClick }: SimpleButtonProps) {
     const theme = useTheme()
     const classes = useStyles(theme)
     return (

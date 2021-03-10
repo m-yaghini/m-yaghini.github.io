@@ -1,7 +1,7 @@
 import React from "react"
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
-import { Box, useTheme, withStyles } from "@material-ui/core"
+import { Box, withStyles } from "@material-ui/core"
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
@@ -40,12 +40,14 @@ const AccordionDetails = withStyles((theme) => ({
     },
 }))(MuiAccordionDetails);
 
+// interface PreviouslyProps {
+//     position: "postNews" | "preNews"
+//     marginTop: number
+// }
 
-export default function () {
-    const theme = useTheme()
-
+export default function Previously() {
     return (
-        <Box sx={{ my: -1 }}>
+        <Box>
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
