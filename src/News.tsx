@@ -7,7 +7,16 @@ import { smoothScroll } from "./App"
 export default function News() {
 
     return (
-        <Timeline align="left" style={{ padding: "0 0 0 0" }}>
+        <Timeline align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
+            <NewsItem
+                date="Apr. 2021"
+                title="New Paper at AIES 2021"
+                content={<div>
+                    My master thesis paper, <Link href="#" onClick={() => { smoothScroll("human") }}>
+                        "A Human-in-the-loop Framework to Construct Context-dependent Mathematical Formulations of Fairness"</Link> has been
+                        accepted to AIES 2021. (New version will appear on arXiv soon)</div>}
+                icon="paper"
+            />
             <NewsItem
                 date="Feb. 2021"
                 title="New paper at Oakland"

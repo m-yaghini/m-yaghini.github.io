@@ -53,6 +53,7 @@ export default function App() {
           <Typography variant="h4" component="h1" gutterBottom>
             Publications
           </Typography>
+          <Publication bibkey={"human"} />
           <Publication bibkey={"pol"} jointWithAndRole={[["Jia"], "Joint first authors"]} />
           <Publication bibkey={"dataset-inference"} />
           <Publication bibkey={"non-discr"} />
@@ -63,7 +64,6 @@ export default function App() {
             Pre-prints
           </Typography>
           <Publication bibkey={"disp-vuln"} />
-          <Publication bibkey={"human"} />
         </Grid>
       </Grid>
       <Copyright />

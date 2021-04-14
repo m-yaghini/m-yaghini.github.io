@@ -29,13 +29,14 @@ const bibFile = `
     eprint    = {1906.00389},
   }
   
-  @article{human,
+  @inproceedings{human,
     author    = {Mohammad Yaghini and
                  Hoda Heidari and
                  Andreas Krause},
     title     = {A Human-in-the-loop Framework to Construct Context-dependent Mathematical
                  Formulations of Fairness},
-    journal   = {CoRR},
+    booktitle = {To apper in the 2021 {AAAI/ACM} Conference on AI, Ethics, and Society
+                 (AIES 2021)},
     volume    = {abs/1911.03020},
     year      = {2019},
     url       = {http://arxiv.org/abs/1911.03020},
