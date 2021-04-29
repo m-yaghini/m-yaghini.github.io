@@ -35,7 +35,7 @@ const bibFile = `
                  Andreas Krause},
     title     = {A Human-in-the-loop Framework to Construct Context-dependent Mathematical
                  Formulations of Fairness},
-    booktitle = {To apper in the 2021 {AAAI/ACM} Conference on AI, Ethics, and Society
+    booktitle = {To appear in the 2021 {AAAI/ACM} Conference on AI, Ethics, and Society
                  (AIES 2021)},
     volume    = {abs/1911.03020},
     year      = {2019},

@@ -1,13 +1,26 @@
 import React from 'react';
 import Timeline from '@material-ui/lab/Timeline';
 import NewsItem from "./NewsItem"
-import { Link } from '@material-ui/core';
+import { createStyles, Link, makeStyles } from '@material-ui/core';
 import { smoothScroll } from "./App"
+
+const useStyles = makeStyles(() => createStyles({
+
+    container: {
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        WebkitMaskImage: "linear-gradient(to top, transparent 2%, black 20%)",
+        maskImage: "linear-gradient(to top, transparent 2%, black 20%)"
+    }
+}));
 
 export default function News() {
 
+    const classes = useStyles()
+
     return (
-        <Timeline align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
+        <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
             <NewsItem
                 date="Apr. 2021"
                 title="New Paper at AIES 2021"
