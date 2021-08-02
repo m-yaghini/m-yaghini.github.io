@@ -23,12 +23,12 @@ export default function News() {
         <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
             <NewsItem
                 date="Jul. 2021"
-                title="Disparate Vulnerability Will Apeaar in PETS 2022!"
+                title="Disparate Vulnerability Will Appear in PETS 2022!"
                 content={<div>
                     Our paper <Link href="#" onClick={() => { smoothScroll("disp-vuln") }}>
                         "Disparate Vulnerability: on the Unfairness of Privacy Attacks Against
                         Machine Learning"</Link> has been
-                    accepted to PETS 2022. New updated arXiv version will appear soon.</div>}
+                    accepted to PETS 2022. New updated arXiv version coming soon.</div>}
                 icon="paper"
             />
             <NewsItem
