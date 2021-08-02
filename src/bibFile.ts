@@ -3,7 +3,7 @@ const bibFile = `
 @article{pol,
   title={Proof-of-Learning: Definitions and Practice}, 
   author={Hengrui Jia and Mohammad Yaghini and Christopher A. Choquette-Choo and Natalie Dullerud and Anvith Thudi and Varun Chandrasekaran and Nicolas Papernot},
-  booktitle={To appear in the 42nd IEEE Symposium on Security and Privacy},
+  booktitle={42nd IEEE Symposium on Security and Privacy (2021)},
   year={2021},
   eprint={2103.05633},
   url={https://arxiv.org/abs/2103.05633},
@@ -17,11 +17,11 @@ const bibFile = `
   url={https://openreview.net/forum?id=hvdKKV2yt7T}
   }
 
-@article{disp-vuln,
-    author    = {Mohammad Yaghini and Bogdan Kulynych and Giovanni Cherubin and Carmela Troncoso},
+@inproceedings{disp-vuln,
+    author    = {Bogdan Kulynych and Mohammad Yaghini and Giovanni Cherubin and Carmela Troncoso},
     title     = {Disparate Vulnerability: on the Unfairness of Privacy Attacks Against
                  Machine Learning},
-    journal   = {CoRR},
+    booktitle = {To appear in the 22st Privacy Enhancing Technologies Symposium (2022)},
     volume    = {abs/1906.00389},
     year      = {2020},
     url       = {http://arxiv.org/abs/1906.00389},
@@ -35,7 +35,7 @@ const bibFile = `
                  Andreas Krause},
     title     = {A Human-in-the-loop Framework to Construct Context-dependent Mathematical
                  Formulations of Fairness},
-    booktitle = {To appear in the 2021 {AAAI/ACM} Conference on AI, Ethics, and Society
+    booktitle = {{AAAI/ACM} Conference on AI, Ethics, and Society
                  (AIES 2021)},
     volume    = {abs/1911.03020},
     year      = {2019},

@@ -53,6 +53,7 @@ export default function App() {
           <Typography variant="h4" component="h1" gutterBottom>
             Publications
           </Typography>
+          <Publication bibkey={"disp-vuln"} />
           <Publication bibkey={"human"} />
           <Publication bibkey={"pol"} jointWithAndRole={[["Jia"], "Joint first authors"]} />
           <Publication bibkey={"dataset-inference"} />
@@ -60,10 +61,9 @@ export default function App() {
           <Publication bibkey={"energy-aware"} />
         </Grid>
         <Grid item>
-          <Typography variant="h4" component="h1" gutterBottom>
+          {/* <Typography variant="h4" component="h1" gutterBottom>
             Pre-prints
-          </Typography>
-          <Publication bibkey={"disp-vuln"} />
+          </Typography> */}
         </Grid>
       </Grid>
       <Copyright />

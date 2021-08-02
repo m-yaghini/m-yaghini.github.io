@@ -22,12 +22,22 @@ export default function News() {
     return (
         <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
             <NewsItem
+                date="Jul. 2021"
+                title="Disparate Vulnerability Will Apeaar in PETS 2022!"
+                content={<div>
+                    Our paper <Link href="#" onClick={() => { smoothScroll("disp-vuln") }}>
+                        "Disparate Vulnerability: on the Unfairness of Privacy Attacks Against
+                        Machine Learning"</Link> has been
+                    accepted to PETS 2022. New updated arXiv version will appear soon.</div>}
+                icon="paper"
+            />
+            <NewsItem
                 date="Apr. 2021"
                 title="New Paper at AIES 2021"
                 content={<div>
                     My master thesis paper, <Link href="#" onClick={() => { smoothScroll("human") }}>
                         "A Human-in-the-loop Framework to Construct Context-dependent Mathematical Formulations of Fairness"</Link> has been
-                        accepted to AIES 2021. (New version will appear on arXiv soon)</div>}
+                    accepted to AIES 2021.</div>}
                 icon="paper"
             />
             <NewsItem
@@ -36,7 +46,7 @@ export default function News() {
                 content={<div>
                     Our paper, <Link href="#" onClick={() => { smoothScroll("pol") }}>
                         "Proof-of-Learning: Definitions and Practice"</Link> has been
-                        accepted to 41st IEEE Symposium on Security and Privacy (Oakland).</div>}
+                    accepted to 41st IEEE Symposium on Security and Privacy (Oakland).</div>}
                 icon="paper"
             />
             <NewsItem
@@ -45,7 +55,7 @@ export default function News() {
                 content={<div>
                     Our paper, <Link href="#" onClick={() => { smoothScroll("dataset-inference") }}>
                         "Dataset Inference: Ownership Resolution in Machine Learning"</Link> has been
-                        accepted to ICLR 2021 with a <b>spotlight</b>.
+                    accepted to ICLR 2021 with a <b>spotlight</b>.
                 </div>}
                 icon="paper"
             />
