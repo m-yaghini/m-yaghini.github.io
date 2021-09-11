@@ -21,7 +21,7 @@ const bibFile = `
     author    = {Bogdan Kulynych and Mohammad Yaghini and Giovanni Cherubin and Carmela Troncoso},
     title     = {Disparate Vulnerability: on the Unfairness of Privacy Attacks Against
                  Machine Learning},
-    booktitle = {To appear in the 22st Privacy Enhancing Technologies Symposium (2022)},
+    booktitle = {To appear in the 22nd Privacy Enhancing Technologies Symposium (2022)},
     volume    = {abs/1906.00389},
     year      = {2020},
     url       = {http://arxiv.org/abs/1906.00389},
