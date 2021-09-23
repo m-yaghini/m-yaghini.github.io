@@ -25,7 +25,7 @@ export default function News() {
                 date="Sept. 2021"
                 title="SRI Graduate Fellowship"
                 content={<div>
-                    I am honored to have been selected as <Link href="https://srinstitute.utoronto.ca/news/introducing-graduate-fellows-2021-22">Schwartz Reisman graduate fellow</Link>.
+                    I am honored to have been selected as a <Link href="https://srinstitute.utoronto.ca/news/introducing-graduate-fellows-2021-22">Schwartz Reisman graduate fellow</Link>.
                 </div>}
                 icon="paper"
             />
