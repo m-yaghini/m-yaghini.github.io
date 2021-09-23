@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 interface PublicationProps {
     bibkey: string,
-    jointWithAndRole?: [[string], string]
+    jointWithAndRole?: [string[], string]
 }
 
 // from https://stackoverflow.com/a/432503

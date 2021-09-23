@@ -61,9 +61,10 @@ export default function App() {
           <Publication bibkey={"energy-aware"} />
         </Grid>
         <Grid item>
-          {/* <Typography variant="h4" component="h1" gutterBottom>
+          <Typography variant="h4" component="h1" gutterBottom>
             Pre-prints
-          </Typography> */}
+          </Typography>
+          <Publication bibkey={"model-governance"} jointWithAndRole={[["Chandrasekaran", "Jia", "Thudi", "Travers"], "Equal Contribution"]} />
         </Grid>
       </Grid>
       <Copyright />

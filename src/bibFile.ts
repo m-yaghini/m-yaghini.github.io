@@ -78,6 +78,17 @@ const bibFile = `
     url       = {https://doi.org/10.1109/CISS.2016.7460520},
     doi       = {10.1109/CISS.2016.7460520}
   }
+  
+  @article{model-governance,
+    author    = {Varun Chandrasekaran and Hengrui Jia and Anvith Thudi and Adelin Travers and Mohammad Yaghini and Nicolas Papernot},
+    title     = {SoK: Machine Learning Governance}, 
+    journal   = {CoRR},
+    volume    = {abs/2109.10870},
+    year      = {2021},
+    url       = {https://arxiv.org/abs/2109.10870},
+    eprinttype = {arXiv},
+    eprint={2109.10870},
+  }
 
   `
 

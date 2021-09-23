@@ -22,6 +22,14 @@ export default function News() {
     return (
         <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
             <NewsItem
+                date="Sept. 2021"
+                title="SRI Graduate Fellowship"
+                content={<div>
+                    I am honored to have been selected as <Link href="https://srinstitute.utoronto.ca/news/introducing-graduate-fellows-2021-22">Schwartz Reisman graduate fellow</Link>.
+                </div>}
+                icon="paper"
+            />
+            <NewsItem
                 date="Jul. 2021"
                 title="Disparate Vulnerability Will Appear in PETS 2022!"
                 content={<div>

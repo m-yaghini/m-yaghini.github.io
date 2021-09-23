@@ -11,24 +11,24 @@ export default function About() {
         <Box>
             <Typography variant="h4" component="h1" gutterBottom>
                 About Me
-          </Typography>
+            </Typography>
             <Typography paragraph align="justify">
                 I am a PhD student at the <Link href="https://cleverhans-lab.github.io/">
                     CleverHans Lab</Link> under the supervision of <Link href="www.papernot.fr">
                     Nicolas Papernot</Link> at the <Link href="https://vectorinstitute.ai/">Vector
-              Institute for Artificial Intelligence</Link> and University of Toronto.
-        </Typography>
+                        Institute for Artificial Intelligence</Link> and University of Toronto. I am also a graduate fellow at the <Link href="https://srinstitute.utoronto.ca/">Schwartz Reisman Institute for Technology and Society</Link>.
+            </Typography>
 
             <Typography paragraph align="justify">
                 My research interests are in the intersection of machine learning and privacy, and
-                more broadly trustworthy machine learning. I am also interested in ML safety for the audio domain.
-        </Typography>
+                more broadly trustworthy machine learning. In particular, I study problems of <Link href="#" onClick={() => { smoothScroll("model-governance") }}>model governance</Link>.
+            </Typography>
 
             <Typography paragraph align="justify">
                 Recently, I have tackled questions of protecting the
                 intellectual property of ML models through detecting and deterring
                 model extraction (via <Link href="#" onClick={() => { smoothScroll("dataset-inference") }}>dataset inference</Link> and <Link href="#" onClick={() => { smoothScroll("pol") }}>proofs</Link> of learning).
-        </Typography>
+            </Typography>
             <Previously />
         </Box>
     )
