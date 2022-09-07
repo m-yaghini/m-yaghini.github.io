@@ -1,5 +1,6 @@
 // NOTE: the key should be on the same line as the identifier (@).
 const bibFile = `
+
 @article{pol,
   title={Proof-of-Learning: Definitions and Practice}, 
   author={Hengrui Jia and Mohammad Yaghini and Christopher A. Choquette-Choo and Natalie Dullerud and Anvith Thudi and Varun Chandrasekaran and Nicolas Papernot},
@@ -88,6 +89,18 @@ const bibFile = `
     url       = {https://arxiv.org/abs/2109.10870},
     eprinttype = {arXiv},
     eprint={2109.10870},
+  }
+
+  @report{p-dknn,
+    title = {p-{DkNN}: Out-of-Distribution Detection Through Statistical Testing of Deep Representations},
+    url = {http://arxiv.org/abs/2207.12545},
+    author = {Adam Dziedzic and Stephan Rabanser and Mohammad Yaghini and Armin Ale and  Murat A. Erdogdu and Nicolas Papernot},
+    year={2022},
+    doi = {10.48550/arXiv.2207.12545},
+    eprinttype = {arxiv},
+    eprint = {2207.12545 [cs, stat]},
+    journal   = {CoRR},
+    volume    = {abs/2207.12545},
   }
 
   `

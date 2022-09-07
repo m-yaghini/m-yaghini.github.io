@@ -16,7 +16,7 @@ export default function About() {
                 I am a PhD student at the <Link href="https://cleverhans-lab.github.io/">
                     CleverHans Lab</Link> under the supervision of <Link href="www.papernot.fr">
                     Nicolas Papernot</Link> at the <Link href="https://vectorinstitute.ai/">Vector
-                        Institute for Artificial Intelligence</Link> and University of Toronto. I am also a graduate fellow at the <Link href="https://srinstitute.utoronto.ca/">Schwartz Reisman Institute for Technology and Society</Link>.
+                        Institute for Artificial Intelligence</Link> and University of Toronto. I am also a <Link href="https://research.facebook.com/blog/2022/2/announcing-the-recipients-of-the-2022-meta-phd-research-fellowship/">Meta PhD Fellow</Link>, and a graduate fellow at the <Link href="https://srinstitute.utoronto.ca/">Schwartz Reisman Institute for Technology and Society</Link>.
             </Typography>
 
             <Typography paragraph align="justify">

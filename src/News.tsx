@@ -22,12 +22,37 @@ export default function News() {
     return (
         <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
             <NewsItem
+                date="Jul. 2022"
+                title="p-dknn Pre-print"
+                content={<div>
+                    New pre-print out on using hypothesis testing and knn structure for NP-classification <Link href="#" onClick={() => { smoothScroll("p-dknn") }}>p-dknn</Link>.
+                </div>}
+                icon="paper"
+            />
+            <NewsItem
+                date="Jun. 2022"
+                title="MSR Internship"
+                content={<div>
+                    I have started an internship with MSR Cambridge Privacy and Security group, 
+                    supervised by <Link href="https://www.microsoft.com/en-us/research/people/santiago/">Santiago Zanella-Béguelin</Link> and <Link href="https://www.microsoft.com/en-us/research/people/luwutsch/">Lukas Wutschitz</Link>.
+                </div>}
+                icon="news"
+            />
+            <NewsItem
+                date="Feb. 2022"
+                title="Meta PhD Fellowship"
+                content={<div>
+                    I have received a <Link href="https://research.facebook.com/blog/2022/2/announcing-the-recipients-of-the-2022-meta-phd-research-fellowship/">Meta PhD Fellowship</Link>.
+                </div>}
+                icon="news"
+            />
+            <NewsItem
                 date="Sept. 2021"
                 title="SRI Graduate Fellowship"
                 content={<div>
                     I am honored to have been selected as a <Link href="https://srinstitute.utoronto.ca/news/introducing-graduate-fellows-2021-22">Schwartz Reisman graduate fellow</Link>.
                 </div>}
-                icon="paper"
+                icon="news"
             />
             <NewsItem
                 date="Jul. 2021"
