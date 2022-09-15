@@ -27,14 +27,6 @@ export default function News() {
                 content={<div>
                     I will be co-teaching <Link href="https://www.papernot.fr/teaching/f22/ml/index.html">ECE421 Introduction to Machine Learning</Link> with Nicolas Papernot in the fall 2022 semester.
                 </div>}
-                icon="paper"
-            />
-            <NewsItem
-                date="Sept. 2022"
-                title="Teaching ECE421: Intro. to ML"
-                content={<div>
-                    I will be co-teaching <Link href="https://www.papernot.fr/teaching/f22/ml/index.html">ECE421 Introduction to Machine Learning</Link> with Nicolas Papernot in the fall 2022 semester.
-                </div>}
                 icon="talk"
             />
             <NewsItem
