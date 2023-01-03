@@ -64,7 +64,10 @@ export default function Publication({ bibkey, jointWithAndRole }: PublicationPro
     const bibEntry = bibTexEntries[bibkey]
 
     let authors: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("author")))
-    authors = authors.replace(/\s{1}and\s{1}(?=.*and)/mg, ', ')
+    authors = authors
+                    .replace(/\s{1}and\s{1}(?=.*and)/mg, ', ')  // replace bibtex and to , 
+                    .replace(`"i`, `ï`)  // latex symbol artifact to utf8 
+                    .replace(`'e`, `è`) // latex symbol artifact to utf8 
 
     let attribution
     if (jointWithAndRole !== undefined) {

@@ -53,6 +53,7 @@ export default function App() {
           <Typography variant="h4" component="h1" gutterBottom>
             Publications
           </Typography>
+          <Publication bibkey={"fairwashing"} jointWithAndRole={[["Shamsabadi", "Dullerud"], "Joint first authors"]} />
           <Publication bibkey={"disp-vuln"} />
           <Publication bibkey={"human"} />
           <Publication bibkey={"pol"} jointWithAndRole={[["Jia"], "Joint first authors"]} />

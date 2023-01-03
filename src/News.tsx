@@ -21,6 +21,15 @@ export default function News() {
 
     return (
         <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
+             <NewsItem
+                date="Oct. 2022"
+                title="Fairwashing in NeurIPS"
+                content={<div>
+                    <Link href="#" onClick={() => { smoothScroll("fairwashing") }}>Washing The Unwashable: On The (Im) possibility of Fairwashing Detection</Link> will appear in NeurIPS 2022.
+                </div>}
+                icon="paper"
+            />
+                
             <NewsItem
                 date="Sept. 2022"
                 title="Teaching ECE421: Intro. to ML"

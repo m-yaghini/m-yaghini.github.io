@@ -1,6 +1,12 @@
 // NOTE: the key should be on the same line as the identifier (@).
 const bibFile = `
 
+@inproceedings{fairwashing,
+  title={Washing The Unwashable: On The (Im) possibility of Fairwashing Detection},
+  author={Ali Shahin Shamsabadi and Mohammad Yaghini and Natalie Dullerud and Sierra Wyllie and Ulrich A{\"\i}vodji and Aisha Alaagib Alryeh Mkean and S{\'e}bastien Gambs and Nicolas Papernot},
+  booktitle={Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS 2022)}
+}
+
 @article{pol,
   title={Proof-of-Learning: Definitions and Practice}, 
   author={Hengrui Jia and Mohammad Yaghini and Christopher A. Choquette-Choo and Natalie Dullerud and Anvith Thudi and Varun Chandrasekaran and Nicolas Papernot},
