@@ -21,6 +21,15 @@ export default function News() {
 
     return (
         <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
+            <NewsItem
+                date="Feb. 2023"
+                title="Pareto Frontier of Fairness, Privacy, and Utility"
+                content={<div>
+                    <Link href="#" onClick={() => { smoothScroll("impartiality") }}>We present</Link> two new algorithms (<i>FairPATE</i> and <i>FairDP-SGD</i>) to recover the frontier of utility with (central) differential privacy and demographic parity mitigations.
+                </div>}
+                icon="paper"
+            />
+
              <NewsItem
                 date="Oct. 2022"
                 title="Fairwashing in NeurIPS"

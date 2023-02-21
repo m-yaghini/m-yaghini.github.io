@@ -65,6 +65,7 @@ export default function App() {
           <Typography variant="h4" component="h1" gutterBottom>
             Pre-prints
           </Typography>
+          <Publication bibkey={"impartiality"}/>
           <Publication bibkey={"p-dknn"} jointWithAndRole={[["Dziedzic", "Rabanser"], "Equal Contribution"]} />
           <Publication bibkey={"model-governance"} jointWithAndRole={[["Chandrasekaran", "Jia", "Thudi", "Travers"], "Equal Contribution"]} />
         </Grid>

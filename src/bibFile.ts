@@ -97,6 +97,17 @@ const bibFile = `
     eprint={2109.10870},
   }
 
+  @article{impartiality,
+    author    = {Mohammad Yaghini and Patty Liu and Franziska Boenisch and Nicolas Papernot},
+    title     = {Learning with Impartiality to Walk on the Pareto Frontier of Fairness, Privacy, and Utility},
+    journal   = {CoRR},
+    volume    = {abs/2302.09183},
+    year      = {2023},
+    url       = {https://arxiv.org/abs/2302.09183},
+    eprinttype = {arXiv},
+    eprint = {2302.09183},
+  }
+
   @report{p-dknn,
     title = {p-{DkNN}: Out-of-Distribution Detection Through Statistical Testing of Deep Representations},
     url = {http://arxiv.org/abs/2207.12545},
