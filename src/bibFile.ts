@@ -4,7 +4,8 @@ const bibFile = `
 @inproceedings{fairwashing,
   title={Washing The Unwashable: On The (Im) possibility of Fairwashing Detection},
   author={Ali Shahin Shamsabadi and Mohammad Yaghini and Natalie Dullerud and Sierra Wyllie and Ulrich A{\"\i}vodji and Aisha Alaagib Alryeh Mkean and S{\'e}bastien Gambs and Nicolas Papernot},
-  booktitle={Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS 2022)}
+  booktitle={Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS 2022)},
+  url={https://openreview.net/forum?id=3vmKQUctNy},
 }
 
 @article{pol,
