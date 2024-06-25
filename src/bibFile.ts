@@ -98,16 +98,25 @@ const bibFile = `
     eprint={2109.10870},
   }
 
-  @article{impartiality,
-    author    = {Mohammad Yaghini and Patty Liu and Franziska Boenisch and Nicolas Papernot},
-    title     = {Learning with Impartiality to Walk on the Pareto Frontier of Fairness, Privacy, and Utility},
-    journal   = {CoRR},
-    volume    = {abs/2302.09183},
-    year      = {2023},
-    url       = {https://arxiv.org/abs/2302.09183},
-    eprinttype = {arXiv},
-    eprint = {2302.09183},
-  }
+@inproceedings{yaghini2023learninga,
+  title = {Learning to {{Walk Impartially}} on the {{Pareto Frontier}} of {{Fairness}}, {{Privacy}}, and {{Utility}}},
+  author = {Mohammad Yaghini and Patty Liu and Franziska Boenisch and Nicolas Papernot},
+  date = {2023-12-12},
+  url = {https://openreview.net/forum?id=R5MTSLPyYZ},
+  urldate = {2024-06-25},
+  eventtitle = {{NeurIPS 2023 Workshop on Regulatable ML}},
+  langid = {english}
+}
+
+@inproceedings{impartiality,
+  title = {Learning to {{Walk Impartially}} on the {{Pareto Frontier}} of {{Fairness}}, {{Privacy}}, and {{Utility}}},
+  author = {Mohammad Yaghini and Patty Liu and Franziska Boenisch and Nicolas Papernot},
+  date = {2023-12-12},
+  url = {https://openreview.net/forum?id=R5MTSLPyYZ},
+  urldate = {2024-06-25},
+  eventtitle = {{{NeurIPS}} 2023 {{Workshop}} on {{Regulatable ML}}},
+  langid = {english}
+}
 
   @report{p-dknn,
     title = {p-{DkNN}: Out-of-Distribution Detection Through Statistical Testing of Deep Representations},
@@ -119,6 +128,27 @@ const bibFile = `
     eprint = {2207.12545 [cs, stat]},
     journal   = {CoRR},
     volume    = {abs/2207.12545},
+  }
+
+  @article{reg_games,
+    author    = {Mohammad Yaghini and Patty Liu and Franziska Boenisch and Nicolas Papernot},
+    title     = {Regulation Games for Trustworthy Machine Learning},
+    journal   = {CoRR},
+    volume    = {abs/2402.03540},
+    year      = {2024},
+    url       = {https://arxiv.org/pdf/2402.03540.pdf},
+    eprinttype = {arXiv},
+    eprint = {2402.03540},
+  }
+
+  @inproceedings{yaghini2023regulation,
+  title = {Regulation {{Games}} for {{Trustworthy Machine Learning}}},
+  author = {Mohammad Yaghini and Patty Liu and Franziska Boenisch and Nicolas Papernot},
+  date = {2023-12-12},
+  url = {https://openreview.net/forum?id=u9gLNSGgRA},
+  urldate = {2024-06-25},
+  eventtitle = {{{NeurIPS}} 2023 {{Workshop}} on {{Regulatable ML}}},
+  langid = {english}
   }
 
   `

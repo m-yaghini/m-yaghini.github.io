@@ -79,7 +79,7 @@ export default function Publication({ bibkey, jointWithAndRole }: PublicationPro
     }
 
     let title: string = String(normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("title")) ?? '')
-    let journal: string = String(((normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("booktitle")))
+    let journal: string = String(((normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("booktitle")?? bibFile_.getEntry(bibkey)?.getField("eventtitle")))
         || (normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("volume"))
             + " (" + normalizeFieldValue(bibFile_.getEntry(bibkey)?.getField("year"))) + ")") ?? '')
     let secondline = jointWithAndRole === undefined ? journal : "* " + attribution + ". " + journal

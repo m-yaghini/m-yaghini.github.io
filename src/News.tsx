@@ -22,10 +22,35 @@ export default function News() {
     return (
         <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
             <NewsItem
+                date="Feb. 2024"
+                title="Regulation Games for Trustworthy Machine Learning"
+                content={<div>
+                    <Link href="#" onClick={() => { smoothScroll("yaghini2023regulation") }}>We introduce</Link> a new framework for modeling the trustworthy ML as a multi-agent multi-objective problem. In particular, we model the relationship trustworthy ML regulators and model builder. We present a tool to simulate their interactions with the goal of designing more effective regulations and penalties.
+                </div>}
+                icon="paper"
+            />
+            <NewsItem
+                date="Dec. 2024"
+                title="Two papers accepted to Regulatable ML@NeurIPS2023"
+                content={<div>
+                    <Link href="https://openreview.net/forum?id=u9gLNSGgRA">Regulation Games</Link> and <Link href="https://openreview.net/forum?id=R5MTSLPyYZ">FairPATE</Link> have been accepted to NeurIPS 2023 Workshop on Regulatable ML.
+                </div>}
+                icon="paper"
+            />
+            <NewsItem
+                date="Jul. 2023"
+                title="Visiting Secure and Private AI Lab at ETHZ"
+                content={
+                    <div>
+                        <Link href='https://floriantramer.com'>Florian Tramèr</Link> is kindly hosting me in the <Link href='https://spylab.ai'>Secure and Private AI (SPY) Lab</Link> at ETHZ this summer where I will be working on an ML Privacy research project.
+                    </div>
+                }
+                ></NewsItem>
+            <NewsItem
                 date="Feb. 2023"
                 title="Pareto Frontier of Fairness, Privacy, and Utility"
                 content={<div>
-                    <Link href="#" onClick={() => { smoothScroll("impartiality") }}>We present</Link> two new algorithms (<i>FairPATE</i> and <i>FairDP-SGD</i>) to recover the frontier of utility with (central) differential privacy and demographic parity mitigations.
+                    <Link href="#" onClick={() => { smoothScroll("yaghini2023learninga") }}>We present</Link> two new algorithms (<i>FairPATE</i> and <i>FairDP-SGD</i>) to recover the frontier of utility with (central) differential privacy and demographic parity mitigations.
                 </div>}
                 icon="paper"
             />

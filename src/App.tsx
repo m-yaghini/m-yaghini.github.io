@@ -63,9 +63,17 @@ export default function App() {
         </Grid>
         <Grid item>
           <Typography variant="h4" component="h1" gutterBottom>
-            Pre-prints
+            Workshops
           </Typography>
-          <Publication bibkey={"impartiality"}/>
+          <Publication bibkey={"yaghini2023learninga"}/>
+          <Publication bibkey={"yaghini2023regulation"}/>
+        </Grid>
+        <Grid item>
+          <Typography variant="h4" component="h1" gutterBottom>
+            Select Pre-prints
+          </Typography>
+          {/* <Publication bibkey={"reg_games"}/> */}
+          {/* <Publication bibkey={"impartiality"}/> */}
           <Publication bibkey={"p-dknn"} jointWithAndRole={[["Dziedzic", "Rabanser"], "Equal Contribution"]} />
           <Publication bibkey={"model-governance"} jointWithAndRole={[["Chandrasekaran", "Jia", "Thudi", "Travers"], "Equal Contribution"]} />
         </Grid>
