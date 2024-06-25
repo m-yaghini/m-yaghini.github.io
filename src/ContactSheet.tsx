@@ -37,6 +37,7 @@ export default function ContactSheet({ direction, classes, justifyContent }: Con
             <Grid item>
                 <IconButton
                     className={classes.button}
+                    edge={"start"}
                     onClick={() => window.open("https://www.linkedin.com/in/myaghini", '_blank')}>
                     <LinkedIn
                         className={classes.responsiveIcon} />
@@ -45,13 +46,16 @@ export default function ContactSheet({ direction, classes, justifyContent }: Con
             <Grid item >
                 <IconButton
                     className={classes.button}
+                    edge={"start"}
                     onClick={() => window.open("https://twitter.com/myaghini", '_blank')}>
                     <Twitter
                         className={classes.responsiveIcon} />
                 </IconButton>
             </Grid>
             <Grid item>
-                <IconButton className={classes.button}
+                <IconButton 
+                    className={classes.button}
+                    edge={"start"}
                     onClick={() => window.open("https://github.com/m-yaghini", '_blank')}>
                     <GitHub
                         className={classes.responsiveIcon} />

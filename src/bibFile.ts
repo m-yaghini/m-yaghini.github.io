@@ -1,4 +1,6 @@
 // NOTE: the key should be on the same line as the identifier (@).
+/* eslint no-use-before-define: 0 */  // --> OFF
+
 const bibFile = `
 
 @inproceedings{fairwashing,

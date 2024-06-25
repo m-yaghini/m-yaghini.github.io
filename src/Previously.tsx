@@ -75,10 +75,10 @@ export default function Previously() {
             the Game Theory and Mechanism Design (<Link
                             href="https://gtmd.iut.ac.ir/">GTMD</Link>) group.
         </Typography>
-                    <Typography paragraph align="justify">
+        {/* <Typography paragraph align="justify">
                         From September 2018 to April 2019, I interned with the Data Science team at Expedia Group (Geneva)
                         where I worked on time-series prediction on large-scale datasets using Scala Spark.
-        </Typography>
+        </Typography> */}
                 </AccordionDetails>
             </Accordion>
         </Box>

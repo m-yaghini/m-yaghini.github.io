@@ -40,6 +40,8 @@ export default function SimpleButton({ className, text, onClick }: SimpleButtonP
             onClick={() => onClick()}
             classes={{ root: classes.root }}
             color="inherit"
+            disableElevation={true}
+            fullWidth={true}
             centerRipple>
             <Typography variant="button" display="block" className={classes.label}>
                 {text}

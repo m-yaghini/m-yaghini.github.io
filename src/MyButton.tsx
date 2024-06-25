@@ -43,7 +43,7 @@ export default function MyBotton({ buttonText, buttonTooltip, buttonIcon, button
             }}
             leaveDelay={(_delayToolTipIfButtonClicked && buttonClicked) ? 1000 : 100}
             leaveTouchDelay={(_delayToolTipIfButtonClicked && buttonClicked) ? 3000 : 1500}
-            disableInteractive
+            interactive={false}
         >
             <Button
                 size="small"
