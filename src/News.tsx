@@ -1,17 +1,43 @@
 import React from 'react';
 import Timeline from '@material-ui/lab/Timeline';
-import NewsItem from "./NewsItem"
-import { createStyles, Link, makeStyles } from '@material-ui/core';
-import { smoothScroll } from "./App"
+import NewsItem from "./components/NewsItem"
+import { createStyles, Link, makeStyles, Theme} from '@material-ui/core';
+import ScrollLink from "./components/ScrollLink"
 
-const useStyles = makeStyles(() => createStyles({
+
+const useStyles = makeStyles((theme: Theme) => createStyles({
 
     container: {
         width: "100%",
         height: "100%",
         objectFit: "cover",
         WebkitMaskImage: "linear-gradient(to top, transparent 2%, black 20%)",
-        maskImage: "linear-gradient(to top, transparent 2%, black 20%)"
+        maskImage: "linear-gradient(to top, transparent 2%, black 20%)",
+        
+        // Start hidden
+        '&::-webkit-scrollbar': {
+            width: '6px',
+        },
+        '&::-webkit-scrollbar-track': {
+            background: 'transparent',
+        },
+        '&::-webkit-scrollbar-thumb': {
+            background: 'transparent',
+            borderRadius: '3px',
+        },
+        
+        // Show on hover
+        '&:hover::-webkit-scrollbar-thumb': {
+            background: 'rgba(0, 0, 0, 0.3)',
+        },
+        
+        // Firefox
+        scrollbarWidth: 'thin',
+        scrollbarColor: 'transparent transparent',
+        
+        '&:hover': {
+            scrollbarColor: 'rgba(0, 0, 0, 0.3) transparent',
+        }
     }
 }));
 
@@ -20,12 +46,52 @@ export default function News() {
     const classes = useStyles()
 
     return (
-        <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 400, overflow: 'auto' }}>
+        <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 500, overflow: 'auto', cursor: 'pointer' }}>
+            <NewsItem
+                date="Sept. 2025"
+                title="Paper in NeurIPS ACA 2025"
+                content={<div>
+                   A new position paper in NeurIPS Algorithmic Collective Action workshop on incentivizing collaboration with fair revenue sharing between stakeholders in an LLM economy. Preprint forth-coming!
+                </div>}
+                icon="paper"
+            />
+            <NewsItem
+                date="June 2025"
+                title="Oral presentation at ICML"
+                content={<div>
+                   Our paper <ScrollLink to="suitability">Suitability Filter</ScrollLink> will have an oral presentation at ICML this year!
+                </div>}
+                icon="news"
+            />
+            <NewsItem
+                date="May 2025"
+                title="Suitability Filters accepted to ICML 2025"
+                content={<div>
+                   Suitability filters are computational model cards that move the onus of establishing suitability for user data from the user to the company who has much more information about the model and its training data.
+                </div>}
+                icon="paper"
+            />
+            <NewsItem
+                date="May 2025"
+                title="Make rate-constrained optimization (e.g. group fairness) DP!"
+                content={<div>
+                    I am excited to share <ScrollLink to="raco-dp">our new preprint</ScrollLink> on a general framework for privatizing rate-constrained optimization.
+                </div>}
+                icon="paper"
+            />
+             <NewsItem
+                date="April 2025"
+                title="ML Regulation as a Principal-Agent Problem accepted to FAccT 2025!"
+                content={<div>
+                    We model trustworthy ML regulation as a  Principal (public) and Agent (private company) problem and show how the information asymmetry and the misaligned incentives can lead to unintended over-regulation. 
+                </div>}
+                icon="paper"
+            />
             <NewsItem
                 date="Feb. 2024"
                 title="Regulation Games for Trustworthy Machine Learning"
                 content={<div>
-                    <Link href="#" onClick={() => { smoothScroll("yaghini2023regulation") }}>We introduce</Link> a new framework for modeling the trustworthy ML as a multi-agent multi-objective problem. In particular, we model the relationship trustworthy ML regulators and model builder. We present a tool to simulate their interactions with the goal of designing more effective regulations and penalties.
+                    <ScrollLink to="yaghini2023regulation"> We introduce</ScrollLink> a new framework for modeling the trustworthy ML as a multi-agent multi-objective problem. In particular, we model the relationship trustworthy ML regulators and model builder. We present a tool to simulate their interactions with the goal of designing more effective regulations and penalties.
                 </div>}
                 icon="paper"
             />
@@ -50,7 +116,7 @@ export default function News() {
                 date="Feb. 2023"
                 title="Pareto Frontier of Fairness, Privacy, and Utility"
                 content={<div>
-                    <Link href="#" onClick={() => { smoothScroll("yaghini2023learninga") }}>We present</Link> two new algorithms (<i>FairPATE</i> and <i>FairDP-SGD</i>) to recover the frontier of utility with (central) differential privacy and demographic parity mitigations.
+                    <ScrollLink to="yaghini2023learninga">We present</ScrollLink> two new algorithms (<i>FairPATE</i> and <i>FairDP-SGD</i>) to recover the frontier of utility with (central) differential privacy and demographic parity mitigations.
                 </div>}
                 icon="paper"
             />
@@ -59,7 +125,7 @@ export default function News() {
                 date="Oct. 2022"
                 title="Fairwashing in NeurIPS"
                 content={<div>
-                    <Link href="#" onClick={() => { smoothScroll("fairwashing") }}>Washing The Unwashable: On The (Im) possibility of Fairwashing Detection</Link> will appear in NeurIPS 2022.
+                    <ScrollLink to="fairwashing">Washing The Unwashable: On The (Im) possibility of Fairwashing Detection</ScrollLink> will appear in NeurIPS 2022.
                 </div>}
                 icon="paper"
             />
@@ -76,7 +142,7 @@ export default function News() {
                 date="Jul. 2022"
                 title="p-dknn Pre-print"
                 content={<div>
-                    New pre-print out on using hypothesis testing and knn structure for NP-classification <Link href="#" onClick={() => { smoothScroll("p-dknn") }}>p-dknn</Link>.
+                    New pre-print out on using hypothesis testing and knn structure for NP-classification <ScrollLink to="p-dknn">p-dknn</ScrollLink>.
                 </div>}
                 icon="paper"
             />
@@ -109,9 +175,9 @@ export default function News() {
                 date="Jul. 2021"
                 title="Disparate Vulnerability Will Appear in PETS 2022!"
                 content={<div>
-                    Our paper <Link href="#" onClick={() => { smoothScroll("disp-vuln") }}>
+                    Our paper <ScrollLink to="disp-vuln">
                         "Disparate Vulnerability: on the Unfairness of Privacy Attacks Against
-                        Machine Learning"</Link> has been
+                        Machine Learning"</ScrollLink> has been
                     accepted to PETS 2022. New updated arXiv version coming soon.</div>}
                 icon="paper"
             />
@@ -119,8 +185,8 @@ export default function News() {
                 date="Apr. 2021"
                 title="New Paper at AIES 2021"
                 content={<div>
-                    My master thesis paper, <Link href="#" onClick={() => { smoothScroll("human") }}>
-                        "A Human-in-the-loop Framework to Construct Context-dependent Mathematical Formulations of Fairness"</Link> has been
+                    My master thesis paper, <ScrollLink to="human">
+                        "A Human-in-the-loop Framework to Construct Context-dependent Mathematical Formulations of Fairness"</ScrollLink> has been
                     accepted to AIES 2021.</div>}
                 icon="paper"
             />
@@ -128,8 +194,8 @@ export default function News() {
                 date="Feb. 2021"
                 title="New paper at Oakland"
                 content={<div>
-                    Our paper, <Link href="#" onClick={() => { smoothScroll("pol") }}>
-                        "Proof-of-Learning: Definitions and Practice"</Link> has been
+                    Our paper, <ScrollLink to="pol">
+                        "Proof-of-Learning: Definitions and Practice"</ScrollLink> has been
                     accepted to 41st IEEE Symposium on Security and Privacy (Oakland).</div>}
                 icon="paper"
             />
@@ -137,8 +203,8 @@ export default function News() {
                 date="Jan. 2021"
                 title="New paper at ICLR 2021"
                 content={<div>
-                    Our paper, <Link href="#" onClick={() => { smoothScroll("dataset-inference") }}>
-                        "Dataset Inference: Ownership Resolution in Machine Learning"</Link> has been
+                    Our paper, <ScrollLink to="dataset-inference">
+                        "Dataset Inference: Ownership Resolution in Machine Learning"</ScrollLink> has been
                     accepted to ICLR 2021 with a <b>spotlight</b>.
                 </div>}
                 icon="paper"

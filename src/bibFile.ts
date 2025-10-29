@@ -3,6 +3,58 @@
 
 const bibFile = `
 
+@inproceedings{fair-revenue,
+title={{To Achieve Truly Generalist Models, We Need to Incentivize Collaboration Through Fair Revenue Sharing}},
+author={Wanru Zhao\textsuperscript{*} and \textbf{M. Yaghini}\textsuperscript{*} and Nicolas Papernot },
+booktitle={NeurIPS 2025 Workshop on Algorithmic Collective Action},
+year={2025},
+url={https://openreview.net/forum?id=H3V0dvjRAV}
+}
+
+@inproceedings{yaghini2024empirical,
+  title = {Empirical {{Privacy Trade-Off Curves}}: {{Understanding}} the {{Gap}} between {{Theoretical}} and {{Practical Privacy Guarantees}}},
+  author = {\textbf{M. Yaghini} and Wutschitz, Lukas and Zanella-Beguelin, Santiago},
+  date = {2024},
+  booktitle = {{{PPAI-24}}: {{The}} 5th {{AAAI Workshop}} on {{Privacy-Preserving Artificial Intelligence}}}
+}
+
+@inproceedings {tubes,
+author = {Shimaa Ahmed and Yash Wani and Ali Shahin Shamsabadi and Mohammad Yaghini and Ilia Shumailov and Nicolas Papernot and Kassem Fawaz},
+title = {Tubes Among Us: Analog Attack on Automatic Speaker Identification},
+booktitle = {32nd USENIX Security Symposium (USENIX Security 23)},
+year = {2023},
+isbn = {978-1-939133-37-3},
+address = {Anaheim, CA},
+pages = {265--282},
+url = {https://www.usenix.org/conference/usenixsecurity23/presentation/ahmed-shimaa},
+publisher = {USENIX Association}
+}
+
+@article{raco-dp,
+      title={{Private Rate-Constrained Optimization with Applications to Fair Learning}}, 
+      author={Mohammad Yaghini\textsuperscript{*} and Tudor Cebere\textsuperscript{*} and Michael Menart and Aurélien Bellet and Nicolas Papernot},
+      year={2025},
+      eprint={2505.22703},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2505.22703}, 
+}
+@inproceedings{suitability,
+title={{Suitability Filter: A Statistical Framework for Model Evaluation in Real-World Deployment Settings}},
+author={Angéline Pouget and Mohammad Yaghini and Stephan Rabanser and Nicolas Papernot},
+booktitle={Forty-second International Conference on Machine Learning (ICML 2025)},
+year={2025},
+url={https://openreview.net/forum?id=V0w8Kj3K6L}
+}
+
+@inproceedings{PAP,
+  title={{Trustworthy ML Regulation as a Principal-Agent Problem}},
+  author={Mohammad Yaghini and Patty Liu and Andrew Magnuson and Natalie Dullerud and Nicolas Papernot},
+  booktitle={ACM Conference on Fairness, Accountability, and Transparency 2025 (FAccT 2025)},
+  year={2025},
+  url={https://dl.acm.org/doi/abs/10.1145/3715275.3732211}
+}
+
 @inproceedings{fairwashing,
   title={Washing The Unwashable: On The (Im) possibility of Fairwashing Detection},
   author={Ali Shahin Shamsabadi and Mohammad Yaghini and Natalie Dullerud and Sierra Wyllie and Ulrich A{\"\i}vodji and Aisha Alaagib Alryeh Mkean and S{\'e}bastien Gambs and Nicolas Papernot},

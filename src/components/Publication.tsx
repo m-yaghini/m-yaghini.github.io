@@ -5,8 +5,9 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
+import Chip from '@material-ui/core/Chip'
 import { parseBibFile, normalizeFieldValue } from 'bibtex'
-import bibFile from './bibFile'
+import bibFile from '../bibFile'
 import { Grid } from '@material-ui/core'
 import { FormatQuote, SubjectTwoTone } from '@material-ui/icons';
 import MyButton from './MyButton'
@@ -33,12 +34,22 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     subtitle: {
         fontSize: theme.typography.caption.fontSize,
+    },
+    badge: {
+        marginLeft: theme.spacing(1),
+        height: 20,
+        fontSize: '0.7rem',
+        fontWeight: 600,
     }
 }));
 
 interface PublicationProps {
     bibkey: string,
-    jointWithAndRole?: [string[], string]
+    jointWithAndRole?: [string[], string],
+    labels?: Array<{
+        text: string,
+        color?: 'default' | 'primary' | 'secondary' | 'teal' | 'purple' | 'orange' | 'red'
+    }>
 }
 
 // from https://stackoverflow.com/a/432503
@@ -47,9 +58,20 @@ function getFirstGroup(regexp: RegExp, str: String) {
     return array.map(m => m[1]);
 }
 
-export default function Publication({ bibkey, jointWithAndRole }: PublicationProps) {
+export default function Publication({ bibkey, jointWithAndRole, labels }: PublicationProps) {
     const theme = useTheme()
     const classes = useStyles(theme)
+
+    // Color mapping for custom badge colors
+    const getChipStyle = (color?: string) => {
+        const colorMap: { [key: string]: { backgroundColor: string, color: string } } = {
+            'teal': { backgroundColor: '#19857b', color: '#fff' },
+            'purple': { backgroundColor: '#9c27b0', color: '#fff' },
+            'orange': { backgroundColor: '#ff9800', color: '#fff' },
+            'red': { backgroundColor: '#f44336', color: '#fff' },
+        }
+        return color && colorMap[color] ? colorMap[color] : {}
+    }
 
     const bibFile_ = parseBibFile(bibFile)
 
@@ -94,6 +116,16 @@ export default function Publication({ bibkey, jointWithAndRole }: PublicationPro
                             <Box className={classes.title} component="span">
                                 {title}
                             </Box>
+                            {labels && labels.map((label, index) => (
+                                <Chip
+                                    key={index}
+                                    label={label.text}
+                                    size="small"
+                                    className={classes.badge}
+                                    color={label.color === 'primary' || label.color === 'secondary' ? label.color : 'default'}
+                                    style={getChipStyle(label.color)}
+                                />
+                            ))}
                         </Typography>
                         <Typography color="textSecondary" gutterBottom>
                             <Box className={classes.authors} component="span">

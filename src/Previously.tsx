@@ -52,7 +52,7 @@ export default function Previously() {
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography >Previously</Typography>
+                    <Typography >Prior to that</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography paragraph align="justify">

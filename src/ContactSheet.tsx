@@ -1,7 +1,7 @@
 import { Grid, GridDirection, GridJustification, IconButton, Typography } from "@material-ui/core"
 import React from "react"
 import IconButtonWithPopover from "./IconButtonWithPopover"
-import SimpleButton from "./SimpleButton"
+import SimpleButton from "./components/SimpleButton"
 import { DraftsRounded, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
 import pdf from "./assets/cv.pdf"
 
@@ -61,9 +61,9 @@ export default function ContactSheet({ direction, classes, justifyContent }: Con
                         className={classes.responsiveIcon} />
                 </IconButton>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
                 <SimpleButton className={classes.responsiveIcon} text="CV" onClick={() => window.open(pdf, '_blank')}></SimpleButton>
-            </Grid>
+            </Grid> */}
         </Grid>
     )
 }
