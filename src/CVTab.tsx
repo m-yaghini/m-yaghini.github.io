@@ -166,7 +166,7 @@ export default function CVTab() {
                     </Typography>
                     {/* <Publication bibkey={"reg_games"}/> */}
                     {/* <Publication bibkey={"impartiality"}/> */}
-                    <Publication bibkey={"raco-dp"} />
+                    <Publication bibkey={"raco-dp"}  jointWithAndRole={[["Cebere"], "Equal Contribution"]} />
                     <Publication bibkey={"p-dknn"} jointWithAndRole={[["Dziedzic", "Rabanser"], "Equal Contribution"]} />
                     <Publication bibkey={"model-governance"} jointWithAndRole={[["Chandrasekaran", "Jia", "Thudi", "Travers"], "Equal Contribution"]} />
                   </Grid>

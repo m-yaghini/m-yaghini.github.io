@@ -5,8 +5,11 @@ import { Box } from "@material-ui/core"
 import Previously from "./Previously"
 import ScrollLink from "./components/ScrollLink"
 
+interface AboutProps {
+    onExpand?: (isExpanded: boolean) => void;
+}
 
-export default function About() {
+export default function About({ onExpand }: AboutProps) {
 
     return (
         <Box>
@@ -31,7 +34,7 @@ export default function About() {
                 model extraction (via <ScrollLink to="dataset-inference">dataset inference</ScrollLink> and <ScrollLink to="pol">proofs of learning</ScrollLink>). 
                 {/* As well as, detecting and tackling failures of trustworthiness measures, such as <Link component="span" onClick={() => { smartScroll("fairwashing") }} style={{ cursor: 'pointer' }}>fairwashing</Link>, where explainability is abused to justify unfairness. */}
             </Typography>
-            <Previously />
+            <Previously onExpand={onExpand} />
         </Box>
     )
 }

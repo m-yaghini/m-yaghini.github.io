@@ -5,7 +5,7 @@ const bibFile = `
 
 @inproceedings{fair-revenue,
 title={{To Achieve Truly Generalist Models, We Need to Incentivize Collaboration Through Fair Revenue Sharing}},
-author={Wanru Zhao\textsuperscript{*} and \textbf{M. Yaghini}\textsuperscript{*} and Nicolas Papernot },
+author={Wanru Zhao and Mohammad Yaghini and Nicolas Papernot},
 booktitle={NeurIPS 2025 Workshop on Algorithmic Collective Action},
 year={2025},
 url={https://openreview.net/forum?id=H3V0dvjRAV}
@@ -13,7 +13,7 @@ url={https://openreview.net/forum?id=H3V0dvjRAV}
 
 @inproceedings{yaghini2024empirical,
   title = {Empirical {{Privacy Trade-Off Curves}}: {{Understanding}} the {{Gap}} between {{Theoretical}} and {{Practical Privacy Guarantees}}},
-  author = {\textbf{M. Yaghini} and Wutschitz, Lukas and Zanella-Beguelin, Santiago},
+  author = {Mohammad Yaghini and Wutschitz, Lukas and Zanella-Beguelin, Santiago},
   date = {2024},
   booktitle = {{{PPAI-24}}: {{The}} 5th {{AAAI Workshop}} on {{Privacy-Preserving Artificial Intelligence}}}
 }
@@ -31,14 +31,24 @@ publisher = {USENIX Association}
 }
 
 @article{raco-dp,
-      title={{Private Rate-Constrained Optimization with Applications to Fair Learning}}, 
-      author={Mohammad Yaghini\textsuperscript{*} and Tudor Cebere\textsuperscript{*} and Michael Menart and Aurélien Bellet and Nicolas Papernot},
-      year={2025},
-      eprint={2505.22703},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2505.22703}, 
+  author       = {Mohammad Yaghini and
+                  Tudor Cebere and
+                  Michael Menart and
+                  Aur{\'{e}}lien Bellet and
+                  Nicolas Papernot},
+  title        = {Private Rate-Constrained Optimization with Applications to Fair Learning},
+  journal      = {CoRR},
+  volume       = {abs/2505.22703},
+  year         = {2025},
+  url          = {https://doi.org/10.48550/arXiv.2505.22703},
+  doi          = {10.48550/ARXIV.2505.22703},
+  eprinttype    = {arXiv},
+  eprint       = {2505.22703},
+  timestamp    = {Sun, 29 Jun 2025 21:59:14 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2505-22703.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
+
 @inproceedings{suitability,
 title={{Suitability Filter: A Statistical Framework for Model Evaluation in Real-World Deployment Settings}},
 author={Angéline Pouget and Mohammad Yaghini and Stephan Rabanser and Nicolas Papernot},

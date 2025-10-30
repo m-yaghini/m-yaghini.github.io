@@ -112,7 +112,7 @@ export default function Publication({ bibkey, jointWithAndRole, labels }: Public
             <Grid container spacing={1} alignContent="space-between" direction="row" alignItems="baseline" >
                 <Grid item xs>
                     <CardContent>
-                        <Typography gutterBottom>
+                        <Typography gutterBottom component="div">
                             <Box className={classes.title} component="span">
                                 {title}
                             </Box>

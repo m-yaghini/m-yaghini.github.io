@@ -14,39 +14,39 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         WebkitMaskImage: "linear-gradient(to top, transparent 2%, black 20%)",
         maskImage: "linear-gradient(to top, transparent 2%, black 20%)",
         
-        // Start hidden
+        // Match MUI Accordion animation exactly
+        transition: theme.transitions.create('max-height', {
+            duration: theme.transitions.duration.standard - 0.1,
+            easing: theme.transitions.easing.easeInOut,
+        }),
+        
+        // Scrollbar styling
         '&::-webkit-scrollbar': {
-            width: '6px',
+            width: '8px',
         },
         '&::-webkit-scrollbar-track': {
             background: 'transparent',
         },
         '&::-webkit-scrollbar-thumb': {
-            background: 'transparent',
-            borderRadius: '3px',
+            background: theme.palette.grey[400],
+            borderRadius: '4px',
         },
-        
-        // Show on hover
-        '&:hover::-webkit-scrollbar-thumb': {
-            background: 'rgba(0, 0, 0, 0.3)',
+        '&::-webkit-scrollbar-thumb:hover': {
+            background: theme.palette.grey[600],
         },
-        
-        // Firefox
-        scrollbarWidth: 'thin',
-        scrollbarColor: 'transparent transparent',
-        
-        '&:hover': {
-            scrollbarColor: 'rgba(0, 0, 0, 0.3) transparent',
-        }
     }
 }));
 
-export default function News() {
+interface NewsProps {
+    maxHeight?: number;
+}
+
+export default function News({ maxHeight }: NewsProps) {
 
     const classes = useStyles()
 
     return (
-        <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: 500, overflow: 'auto', cursor: 'pointer' }}>
+        <Timeline className={classes.container} align="left" style={{ padding: "0 20px 0 0", maxHeight: maxHeight || 500, overflow: 'auto', cursor: 'pointer' }}>
             <NewsItem
                 date="Sept. 2025"
                 title="Paper in NeurIPS ACA 2025"

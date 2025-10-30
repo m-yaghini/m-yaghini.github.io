@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import { Box, withStyles } from "@material-ui/core"
@@ -40,15 +40,28 @@ const AccordionDetails = withStyles((theme) => ({
     },
 }))(MuiAccordionDetails);
 
-// interface PreviouslyProps {
-//     position: "postNews" | "preNews"
-//     marginTop: number
-// }
+interface PreviouslyProps {
+    onExpand?: (isExpanded: boolean) => void;
+}
 
-export default function Previously() {
+export default function Previously({ onExpand }: PreviouslyProps) {
+    const [expanded, setExpanded] = useState(false);
+
+    const handleChange = () => {
+        const newExpanded = !expanded;
+        setExpanded(newExpanded);
+        if (onExpand) {
+            onExpand(newExpanded);  // Pass the new state
+        }
+    };
+    
     return (
         <Box>
-            <Accordion>
+            <Accordion expanded={expanded}
+            onChange={(_event: React.ChangeEvent<{}>, isExpanded: boolean) => {
+                    handleChange();
+                }}
+            >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >

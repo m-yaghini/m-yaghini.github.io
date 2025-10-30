@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
@@ -35,6 +35,11 @@ function Copyright() {
 
 export default function App() {
   const [activeTab, setActiveTab] = useState(0);
+  const [aboutHeight, setAboutHeight] = useState<number | undefined>(undefined);
+  const [aboutCollapsedHeight, setAboutCollapsedHeight] = useState<number>(0);
+  const [aboutExpandedHeight, setAboutExpandedHeight] = useState<number>(0);
+  const [isAccordionExpanded, setIsAccordionExpanded] = useState(false);
+  const aboutRef = useRef<HTMLDivElement>(null);
 
   const handleTabChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setActiveTab(newValue);
@@ -45,6 +50,60 @@ export default function App() {
   
   // Initialize smart scroll hook
   const smartScroll = useSmartScroll(setActiveTab, homePublications);
+
+  // Pre-measure both collapsed and expanded heights
+  useEffect(() => {
+    if (activeTab === 0 && aboutRef.current) {
+      const measureHeights = () => {
+        if (!aboutRef.current) return;
+        
+        const accordion = aboutRef.current.querySelector('.MuiAccordion-root') as HTMLElement;
+        if (!accordion) return;
+
+        // Check if currently expanded
+        const isCurrentlyExpanded = accordion.classList.contains('Mui-expanded');
+
+        const collapseRoot = accordion.querySelector('.MuiCollapse-root') as HTMLElement;
+        if (!collapseRoot) return;
+
+        const wrapper = collapseRoot.querySelector('[class*="wrapper"]') as HTMLElement;
+        if (!wrapper) return;
+
+        const currentAboutHeight = aboutRef.current.offsetHeight;
+        const accordionContentHeight = wrapper.scrollHeight;
+
+        if (isCurrentlyExpanded) {
+          // Currently expanded, so current height IS the expanded height
+          setAboutExpandedHeight(currentAboutHeight);
+          setAboutCollapsedHeight(currentAboutHeight - accordionContentHeight);
+          setAboutHeight(currentAboutHeight);
+          setIsAccordionExpanded(true);
+        } else {
+          // Currently collapsed, so current height IS the collapsed height
+          setAboutCollapsedHeight(currentAboutHeight);
+          setAboutExpandedHeight(currentAboutHeight + accordionContentHeight);
+          setAboutHeight(currentAboutHeight);
+          setIsAccordionExpanded(false);
+        }
+      };
+      
+      setTimeout(measureHeights, 100);
+      setTimeout(measureHeights, 500);
+      
+      window.addEventListener('resize', measureHeights);
+      
+      return () => {
+        window.removeEventListener('resize', measureHeights);
+      };
+    }
+  }, [activeTab]);
+
+  // Instant height update when accordion clicked
+  const handleAccordionExpand = (willBeExpanded: boolean) => {
+    setIsAccordionExpanded(willBeExpanded);
+    const newHeight = willBeExpanded ? aboutExpandedHeight : aboutCollapsedHeight;
+    setAboutHeight(newHeight);
+  };
 
   return (
     <SmartScrollContext.Provider value={smartScroll}>
@@ -65,13 +124,15 @@ export default function App() {
             {/* when in "extra small" mode, this should take the whole row; 
             when in "small" mode only 7/12 of the row */}
             <Grid item xs={12} sm={7}>
-              <About/>
+              <div ref={aboutRef}>
+                <About onExpand={handleAccordionExpand}/>
+              </div>
             </Grid>
             <Grid item xs={12} sm={5}>
               <Typography variant="h4" component="h1" gutterBottom>
                 News
               </Typography>
-              <News/>
+              <News  maxHeight={aboutHeight}/>
             </Grid>
           </Grid>
           <Grid item>
