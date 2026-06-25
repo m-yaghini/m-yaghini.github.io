@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/static/js/main.d5050cff.js",
+    "main.js": "/static/js/main.099c719a.js",
     "static/media/photo.jpg": "/static/media/photo.fa1ca7daae90373bae55.jpg",
     "index.html": "/index.html",
     "static/media/google-scholar.svg": "/static/media/google-scholar.01b72c7046016434f78016482b3319b3.svg",
-    "main.d5050cff.js.map": "/static/js/main.d5050cff.js.map"
+    "main.099c719a.js.map": "/static/js/main.099c719a.js.map"
   },
   "entrypoints": [
-    "static/js/main.d5050cff.js"
+    "static/js/main.099c719a.js"
   ]
 }
